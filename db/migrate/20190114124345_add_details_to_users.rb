@@ -3,7 +3,7 @@ class AddDetailsToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :first_name, :string
     add_column :users, :second_name, :string
     add_column :users, :birthday, :date
-    add_column :users, :class, :string
+    add_column :users, :klass, :string
     add_column :users, :form, :integer
     add_column :users, :phone, :string
     add_column :users, :role, :string

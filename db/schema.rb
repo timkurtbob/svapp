@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 2019_01_14_124345) do
     t.string "first_name"
     t.string "second_name"
     t.date "birthday"
-    t.string "class"
+    t.string "klass"
     t.integer "form"
     t.string "phone"
     t.string "role"
