@@ -1,0 +1,18 @@
+<div>
+  <div class="avatar avatar-medium">
+    <!-- author pic -->
+  </div>
+  <div>
+    <h4><%= @author.first_name %> <%= @author.second_name %> | <%= @author.form %> <%= @author.klass %></h4>
+    <h4><%= @entry.created_at.strftime('%D%M') %> - <%= @entry.created_at.strftime('%H:%M') %></h4>
+  </div>
+</div>
+<h1>----------</h1>
+<div>
+  <h4><%= @entry.date.strftime('%A') %>, <%= @entry.date %> um <%= @entry.time.strftime('%H:%M')%> Uhr </h4>
+  <h4><%= @entry.location %></h4>
+  <h2><%= @entry.title %></h2>
+  <h4><%= @entry.description %></h4>
+  <h4>Wann: <%= @entry.date %> - <%= @entry.time.strftime('%H:%M') %></h4>
+  <h4>Wo: <%= @entry.location %></h4>
+</div>
