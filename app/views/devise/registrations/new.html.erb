@@ -1,16 +1,48 @@
 <h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= simple_form_for (@school) %>
+
+
+<%= simple_form_for[(resource, as: resource_name, url: registration_path(resource_name)), @school] do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :first_name,
                 required: true,
                 autofocus: true ,
-                input_html: { autocomplete: "Vorname" }%>
-    <%= f.input :email,
+                input_html: { autocomplete: "first_name" }%>
+    <%= f.input :second_name,
                 required: true,
                 autofocus: true ,
+                input_html: { autocomplete: "last_name" }%>
+    <%= f.input :birthday,
+                as: :date,
+                start_year: Date.today.year - 75,
+                end_year: Date.today.year - 10,
+                order: [:day, :month, :year],
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "birthday" }%>
+    <%= f.input :school_id,
+                collection: ['Bürgermeister Herz Grundschule'] %>
+    <%= f.association :school %>
+    <%= f.input :form,
+                collection: 5..13,
+                required: true,
+                autofocus: true ,
+                input_html: { autocomplete: "last_name" }%>
+    <%= f.input :klass,
+                required: true,
+                autofocus: true ,
+                input_html: { autocomplete: "last_name" }%>
+    <%= f.input :role,
+                collection: ['Klassensprecher', 'Jahrgangssprecher', 'Schulsprecher', 'Moderator', 'Lehrer'],
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "last_name" }%>
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
                 input_html: { autocomplete: "email" }%>
     <%= f.input :password,
                 required: true,
