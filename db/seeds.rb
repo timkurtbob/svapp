@@ -62,8 +62,8 @@ user_three = User.create(
   password: 'xxxxxx'
   )
 
-entry = Entry.create(
-  title: 'Schulprecherwahl',
+entry_one = Entry.create(
+  title: 'Schulsprecherwahl',
   description: 'Am 12. Februar habt ihr die "Qual der Wahl". Gewählt werden die Schulsprecher und die Vertrauenslehrer.
     Zudem können die Schüler wie alle wahlberechtigten Erwachsenen die Parteien des Bundestages bei der U18-Wahl wählen.',
   date: Date.new(2019, 2, 12),
@@ -74,14 +74,37 @@ entry = Entry.create(
 comment_one = Comment.create(
   text: 'Ich finde wir sollten Tim wählen. Also mich, meine ich.',
   user: user_two,
-  entry: entry
+  entry: entry_one
   )
 comment_two = Comment.create(
   text: 'Wo finde ich die Wahlzettel? Möchte die vorher schonmal anschauen.',
   user: user_three,
-  entry: entry
+  entry: entry_one
   )
 Bee.create(
   user: user_two,
   comment: comment_two
+  )
+
+entry_two = Entry.create(
+  title: 'Titel2',
+  description: 'Wiebke ist leider viel kreativer als ich was seed dinge angeht...',
+  date: Date.new(2019, 1, 12),
+  time: Time.new(2019, 01, 12, 14, 0, 0, "+01:00"),
+  location: 'Irgendwo',
+  user: user_one
+  )
+comment_three = Comment.create(
+  text: 'Ich finde wir sollten Dinge tun',
+  user: user_two,
+  entry: entry_two
+  )
+comment_four = Comment.create(
+  text: 'Ich will auch was kommentieren',
+  user: user_three,
+  entry: entry_two
+  )
+Bee.create(
+  user: user_two,
+  comment: comment_four
   )
