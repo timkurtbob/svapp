@@ -30,9 +30,9 @@
             </div>
             <div class="comment-content">
               <p class="comment-text"><%= comment.text %></p>
-              <div class="bee">
-                <h4 class="red-font"><%= comment.bees.count %></h4>
-                <%= image_tag "bee.png", alt: "Biene" %></div>
+              <div id='<%="comment_#{comment.id.to_s}"%>'>
+                <%= render 'components/bee', comment: comment %>
+              </div>
             </div>
           </div>
         <% end %>
