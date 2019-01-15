@@ -1,3 +1,7 @@
+body {
+  background-color: white;
+}
+
 h1 {
   font-size: 28px;
 }
@@ -15,5 +19,33 @@ h4 {
 }
 
 h5 {
-  font-size: 12px;
+  font-size: 10px;
+}
+
+p {
+  font-size: 14px;
+}
+
+h2, h3, h4, h5, p {
+  color: $letter-gray;
+}
+
+.red-font {
+  color: $brand-red;
+}
+
+.semi-bold-font {
+  font-weight: 600;
+}
+
+.bold-font {
+  font-weight: 700;
+}
+
+.small-top-bottom-margin {
+  margin: 5px 0;
+}
+
+.italic-font {
+  font-style: italic;
 }
