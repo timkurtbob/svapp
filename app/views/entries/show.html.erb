@@ -1,18 +1,41 @@
-<div>
-  <div class="avatar avatar-medium">
-    <!-- author pic -->
+<div class="container">
+  <div class="author-infos big">
+    <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'amelie.png' %>);">
+    </div>
+    <div>
+      <h3 class="red-font bold-font"><%= @author.first_name %> <%= @author.second_name %> | <%= @author.form %><%= @author.klass %></h3>
+      <h3><%= @entry.created_at.strftime("%Y-%m-%d") %> - <%= @entry.created_at.strftime('%H:%M') %></h3>
+    </div>
+  </div>
+  <div class="entry-body">
+    <h3 class="small-top-bottom-margin semi-bold-font"><%= t @entry.date.strftime('%A') %>, <%= @entry.date.strftime("%d.%m.%Y") %> um <%= @entry.time.strftime('%H:%M')%> Uhr </h3>
+    <h3 class="small-top-bottom-margin semi-bold-font italic-font"><%= @entry.location %></h3>
+    <h2 class="semi-bold-font small-top-bottom-margin"><%= @entry.title %></h2>
+    <p><%= @entry.description %></p>
+    <p class="small-top-bottom-margin"><span class="bold-font">Wann: </span><%= t @entry.date.strftime('%A') %>, <%= @entry.date.strftime("%d.%m.%Y") %> um <%= @entry.time.strftime('%H:%M')%> Uhr </p>
+    <p class="small-top-bottom-margin"><span class="bold-font">Wo: </span><%= @entry.location %></p>
   </div>
   <div>
-    <h4><%= @author.first_name %> <%= @author.second_name %> | <%= @author.form %> <%= @author.klass %></h4>
-    <h4><%= @entry.created_at.strftime('%D%M') %> - <%= @entry.created_at.strftime('%H:%M') %></h4>
+    <div class="comments">
+      <h4 class="bold-font">Kommentare:</h4>
+        <% @comments.each do |comment| %>
+          <div class="comment">
+            <div class="author-infos small">
+              <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'amelie.png' %>);">
+              </div>
+              <div>
+                <h5 class="red-font bold-font"><%= comment.user.first_name %> <%= comment.user.second_name %> | <%= comment.user.form %><%= comment.user.klass %></h5>
+                <h5><%= comment.created_at.strftime("%Y-%m-%d") %> - <%= comment.created_at.strftime('%H:%M') %></h5>
+              </div>
+            </div>
+            <div class="comment-content">
+              <p class="comment-text"><%= comment.text %></p>
+              <div class="bee">
+                <h4 class="red-font"><%= comment.bees.count %></h4>
+                <%= image_tag "bee.png", alt: "Biene" %></div>
+            </div>
+          </div>
+        <% end %>
+      </div>
   </div>
-</div>
-<h1>----------</h1>
-<div>
-  <h4><%= @entry.date.strftime('%A') %>, <%= @entry.date %> um <%= @entry.time.strftime('%H:%M')%> Uhr </h4>
-  <h4><%= @entry.location %></h4>
-  <h2><%= @entry.title %></h2>
-  <h4><%= @entry.description %></h4>
-  <h4>Wann: <%= @entry.date %> - <%= @entry.time.strftime('%H:%M') %></h4>
-  <h4>Wo: <%= @entry.location %></h4>
 </div>
