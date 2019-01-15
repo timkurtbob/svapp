@@ -1,0 +1,10 @@
+<%= link_to bee_path(comment), remote: true do %>
+  <div class="bee">
+    <h4 class="red-font"><%= comment.bees.count %></h4>
+    <% if current_user.bees.find_by(comment_id: comment.id) %>
+      <%= image_tag "full_bee.png", alt: "Geklickte Biene" %>
+    <% else %>
+      <%= image_tag "bee.png", alt: "Ungeklickte Biene" %>
+    <% end %>
+  </div>
+<% end %>
