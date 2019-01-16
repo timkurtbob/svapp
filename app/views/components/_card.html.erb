@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-head">
+    <div class="author-infos big">
+      <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'amelie.png' %>);"></div>
+      <div>
+        <h4 class="red-font semi-bold-font"><%= entry.user.first_name %> <%= entry.user.second_name %> | <%= entry.user.form %> <%= entry.user.klass %></h4>
+        <h4><%= entry.created_at.strftime("%Y-%m-%d") %> - <%= entry.created_at.strftime('%H:%M') %></h4>
+      </div>
+    </div>
+    <div class="small" id="bookmark" style="background-image: url(<%= asset_path 'bookmark0.svg' %>);"></div>
+  </div>
+
+  <div class="card-description">
+    <h2 class="red-font bold-font"><%= entry.title %></h2>
+    <p><%= entry.description %></p>
+  </div>
+
+  <div class="card-foot">
+    <h4 class="red-font semi-bold-font" id="card-date"><%= entry.date %> <%= entry.time %></h4>
+    <h4 class="red-font semi-bold-font"><%= entry.location %></h4>
+  </div>
+  <a class="card-link" href="#" ></a>
+</div>
