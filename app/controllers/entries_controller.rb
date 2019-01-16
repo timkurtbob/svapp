@@ -34,7 +34,10 @@ class EntriesController < ApplicationController
     @comment.user = current_user
     # authorize @comment
     if @comment.save
-      redirect_to entry_path(@entry)
+      respond_to do |format|
+        format.html { redirect_to entry_path(@entry) }
+        format.js # <-- will render `app/views/entries/add_comment.js.erb`
+      end
     else
       render 'new'
     end

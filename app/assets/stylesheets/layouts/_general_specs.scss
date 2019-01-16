@@ -49,3 +49,16 @@ h2, h3, h4, h5, p {
 .italic-font {
   font-style: italic;
 }
+
+.btn-first-choice {
+  background-color: $brand-red;
+  color: white;
+  font-size: 14px;
+  padding: 4px 15px;
+}
+
+.btn-second-choice {
+  color: $brand-red;
+  font-size: 14px;
+  padding: 4px 15px;
+}

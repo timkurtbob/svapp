@@ -1,0 +1,16 @@
+<div class="comment">
+  <div class="author-infos small">
+    <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'amelie.png' %>);">
+    </div>
+    <div>
+      <h5 class="red-font bold-font"><%= comment.user.first_name %> <%= comment.user.second_name %> | <%= comment.user.form %><%= comment.user.klass %></h5>
+      <h5><%= comment.created_at.strftime("%Y-%m-%d") %> - <%= comment.created_at.strftime('%H:%M') %></h5>
+    </div>
+  </div>
+  <div class="comment-content">
+    <p class="comment-text"><%= comment.text %></p>
+    <div id='<%="comment_#{comment.id.to_s}"%>'>
+      <%= render 'components/bee', comment: comment %>
+    </div>
+  </div>
+</div>

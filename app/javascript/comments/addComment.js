@@ -5,6 +5,9 @@ function addEventListenerforNewComment() {
 
   const cancelBtn = document.getElementById('cancel-btn');
   cancelBtn.addEventListener('click', hideButtons)
+
+  const submitBtn = document.getElementById('submit-btn');
+  submitBtn.addEventListener('click', hideButtons)
 }
 
 const showButtons = () => {

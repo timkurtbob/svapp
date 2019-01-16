@@ -23,7 +23,7 @@
           <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'amelie.png' %>);">
           </div>
         </div>
-        <%= simple_form_for(@comment, url: add_comment_path, html: { autocomplete: 'off', wrap: 'hard'}) do |f| %>
+        <%= simple_form_for(@comment, url: add_comment_path, html: { autocomplete: 'off', wrap: 'hard'}, remote: true) do |f| %>
           <%= f.error_notification %>
 
           <div id="comment-input">
@@ -32,28 +32,13 @@
 
           <div class="form-actions hidden">
             <%= f.button :button, 'Abbrechen', type: :reset, class: 'btn btn-second-choice', id: 'cancel-btn' %>
-            <%= f.button :submit, "Kommentieren", class:'btn btn-first-choice' %>
+            <%= f.button :submit, "Kommentieren", class:'btn btn-first-choice', id: 'submit-btn' %>
           </div>
         <% end %>
       </div>
         <% @comments.each do |comment| %>
-          <div class="comment">
-            <div class="author-infos small">
-              <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'amelie.png' %>);">
-              </div>
-              <div>
-                <h5 class="red-font bold-font"><%= comment.user.first_name %> <%= comment.user.second_name %> | <%= comment.user.form %><%= comment.user.klass %></h5>
-                <h5><%= comment.created_at.strftime("%Y-%m-%d") %> - <%= comment.created_at.strftime('%H:%M') %></h5>
-              </div>
-            </div>
-            <div class="comment-content">
-              <p class="comment-text"><%= comment.text %></p>
-              <div id='<%="comment_#{comment.id.to_s}"%>'>
-                <%= render 'components/bee', comment: comment %>
-              </div>
-            </div>
-          </div>
+          <%= render 'components/comment', comment: comment %>
         <% end %>
-      </div>
+    </div>
   </div>
 </div>
