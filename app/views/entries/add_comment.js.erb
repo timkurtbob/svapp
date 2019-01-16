@@ -1,0 +1,9 @@
+function addComment() {
+  const lastComment = document.querySelector('.comment')
+  const html = "<%= j render 'components/comment', comment: @comment %>";
+  lastComment.insertAdjacentHTML('beforebegin', html)
+  const inputField = document.getElementById('comment_text');
+  inputField.value = '';
+}
+
+addComment()

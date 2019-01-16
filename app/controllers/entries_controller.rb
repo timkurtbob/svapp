@@ -8,7 +8,8 @@ class EntriesController < ApplicationController
   def show
     @entry = Entry.find(params[:id])
     @author = @entry.user
-    @comments = @entry.comments
+    @comments = @entry.comments.reverse
+    @comment = Comment.new
   end
 
   def bee
@@ -24,5 +25,25 @@ class EntriesController < ApplicationController
       format.html { redirect_to entry_path(@entry) }
       format.js # <-- will render `app/views/entries/bee.js.erb`
     end
+  end
+
+  def add_comment
+    @entry = Entry.find(params[:id])
+    @comment = Comment.new(comment_params)
+    @comment.entry = @entry
+    @comment.user = current_user
+    # authorize @comment
+    if @comment.save
+      respond_to do |format|
+        format.html { redirect_to entry_path(@entry) }
+        format.js # <-- will render `app/views/entries/add_comment.js.erb`
+      end
+    else
+      render 'new'
+    end
+  end
+
+  def comment_params
+    params.require(:comment).permit(:text)
   end
 end
