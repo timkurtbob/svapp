@@ -8,7 +8,7 @@ class EntriesController < ApplicationController
   def show
     @entry = Entry.find(params[:id])
     @author = @entry.user
-    @comments = @entry.comments
+    @comments = @entry.comments.reverse
     @comment = Comment.new
   end
 
