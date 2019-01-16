@@ -8,20 +8,14 @@ body {
   margin: 24px;
 }
 
-#login-logo {
-  background-size: cover;
-  width: 150px;
-  height: 150px;
+.logo-container{
+  display: flex;
+  justify-content: center;
   margin-top: 100px;
   margin-bottom: 50px;
 }
 
-.logo-container{
-  display: flex;
-  justify-content: center;
-}
-
 .login-form{
-  max-width: 500px;
+  max-width: 400px;
   margin-top: 100px;
 }
