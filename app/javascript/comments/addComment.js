@@ -13,8 +13,8 @@ function addEventListenerforNewComment() {
 const showButtons = () => {
   const buttons = document.querySelector('.form-actions')
   const inputField = document.getElementById('comment_text');
-  if (buttons.classList.contains('hidden')) {
-    buttons.classList.remove('hidden')
+  if (buttons.classList.contains('d-none')) {
+    buttons.classList.remove('d-none')
     inputField.classList.add('active')
   }
 }
@@ -22,7 +22,7 @@ const showButtons = () => {
 const hideButtonsIfEmpty = () => {
   const buttons = document.querySelector('.form-actions');
   const inputField = document.getElementById('comment_text');
-  if (inputField.value === '' && !buttons.classList.contains('hidden')) {
+  if (inputField.value === '' && !buttons.classList.contains('d-none')) {
     hideButtons();
   }
 }
@@ -31,7 +31,7 @@ const hideButtons = () => {
   const inputField = document.getElementById('comment_text');
   const buttons = document.querySelector('.form-actions');
   inputField.classList.remove('active')
-  buttons.classList.add('hidden');
+  buttons.classList.add('d-none');
 }
 
 export { addEventListenerforNewComment };
