@@ -30,9 +30,9 @@
             <%= f.input :text, as: :text, required: true, placeholder: 'Schreibe einen Kommentar...', label: false %>
           </div>
 
-          <div class="form-actions hidden">
-            <%= f.button :button, 'Abbrechen', type: :reset, class: 'btn btn-second-choice', id: 'cancel-btn' %>
-            <%= f.button :submit, "Kommentieren", class:'btn btn-first-choice', id: 'submit-btn' %>
+          <div class="form-actions d-none">
+            <%= f.button :button, 'Abbrechen', type: :reset, class: 'btn-second-choice', id: 'cancel-btn' %>
+            <%= f.button :submit, "Kommentieren", disabled: true, class:'btn-first-choice', id: 'submit-btn' %>
           </div>
         <% end %>
       </div>
