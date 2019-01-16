@@ -1,6 +1,6 @@
 <div class="container">
   <div class="logo-container">
-    <div id="login-logo" style="background-image: url(<%= asset_path 'logo.png' %>);"></div>
+    <%= cl_image_tag("logo", width: 150, height: 150, crop: :fill) %>
   </div>
   <div class="landing-description">
     <h2>Mehr als lernen</h2>
