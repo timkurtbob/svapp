@@ -1,11 +1,14 @@
-body {
+.red-background {
   background-color: $brand-red;
 }
 
-.landing-description h1, h2 {
+.landing-description {
+  h1, h2 {
+
   text-align: center;
   color: white;
   margin: 24px;
+  }
 }
 
 .logo-container{

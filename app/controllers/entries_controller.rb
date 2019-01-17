@@ -3,6 +3,7 @@ class EntriesController < ApplicationController
 
   def index
     @entries = Entry.all
+    @entry = Entry.new
   end
 
   def show
@@ -10,6 +11,13 @@ class EntriesController < ApplicationController
     @author = @entry.user
     @comments = @entry.comments.reverse
     @comment = Comment.new
+  end
+
+  def create
+    @entry = Entry.new(entry_params)
+    @entry.user = current_user
+    @entry.save
+    redirect_to @entry
   end
 
   def bee
@@ -45,5 +53,9 @@ class EntriesController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:text)
+  end
+
+  def entry_params
+    params.require(:entry).permit(:title, :description, :time, :date, :location)
   end
 end

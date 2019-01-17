@@ -1,0 +1,42 @@
+.modal-header {
+  border-bottom: none;
+  padding: 0.5rem;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+#entry_title, #entry_description, #entry_date_1i, #entry_date_2i, #entry_date_3i, #entry_location {
+  font-size: 14px;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: 0.5px solid $brand-red;
+}
+
+.entry_date {
+  border-bottom: 0.5px solid $brand-red;
+}
+
+.entry_time {
+  margin-bottom: 2px;
+}
+
+.bottom-border {
+  border-bottom: 0.5px solid $brand-red;
+  margin-bottom: 1rem;
+}
+
+#entry_date_1i, #entry_date_2i, #entry_date_3i, #entry_time_4i, #entry_time_5i {
+  font-size: 14px;
+  border: none;
+  box-shadow: none;
+}
+
+.form-control-label {
+  margin-bottom: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: $brand-red;
+}
