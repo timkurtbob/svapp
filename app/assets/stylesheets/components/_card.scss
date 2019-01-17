@@ -1,10 +1,13 @@
 .entry-card {
-  text-shadow: 0 1px 1px rgba(0,0,0,0.4);
   position: relative;
   border-bottom-style: solid;
   border-color: $brand-red;
   border-width: 1px;
   margin-top: 16px;
+}
+
+.entry-card a {
+  text-decoration: none;
 }
 
 .bookmark-icon {
@@ -19,6 +22,10 @@
 
 #entry-card-date {
   font-style: italic;
+}
+
+.entry-card-link {
+  margin: 10px;
 }
 
 .entry-card-link:hover {
