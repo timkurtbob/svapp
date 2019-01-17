@@ -1,10 +1,19 @@
 .modal-header {
   border-bottom: none;
-  padding: 0.5rem;
+  padding: 0.5rem 0.5rem 0;
+  button {
+    color: $brand-red;
+    opacity: 1;
+    font-weight: 400;
+  }
 }
 
 .modal-footer {
   border-top: none;
+}
+
+.modal-body {
+  padding: 0 16px !important;
 }
 
 #entry_title, #entry_description, #entry_date_1i, #entry_date_2i, #entry_date_3i, #entry_location {
@@ -13,6 +22,7 @@
   box-shadow: none;
   border-radius: 0;
   border-bottom: 0.5px solid $brand-red;
+  padding: 0;
 }
 
 .entry_date {
@@ -20,7 +30,8 @@
 }
 
 .entry_time {
-  margin-bottom: 2px;
+  margin-bottom: 3px;
+  padding: 0;
 }
 
 .bottom-border {

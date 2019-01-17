@@ -1,0 +1,25 @@
+.fixed-floating-button{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  z-index: 99;
+  background-color: $brand-red;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  i{
+    color: white;
+    font-size: 30px;
+    letter-spacing: 1px;
+  }
+  transition: 0.8s ease;
+  &:hover {
+    transform: scale(1.2);
+  }
+}

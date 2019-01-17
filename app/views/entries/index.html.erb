@@ -3,10 +3,15 @@
     <%= render 'components/card', entry: entry %>
   <% end %>
 </div>
+
+<div class="fixed-floating-button" id= 'clicky-button' data-toggle="modal" data-target="#exampleModalCenter">
+  <i class="fas fa-plus"></i>
+</div>
+
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
   Launch demo modal
-</button>
+</button> -->
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
