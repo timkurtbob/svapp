@@ -18,6 +18,10 @@ const showButtons = () => {
     buttons.classList.remove('d-none')
     inputField.classList.add('active')
   }
+  const submitBtn = document.getElementById('submit-btn');
+  if (inputField.value === '') {
+    submitBtn.disabled = true
+  }
 }
 
 const hideButtonsIfEmpty = () => {
