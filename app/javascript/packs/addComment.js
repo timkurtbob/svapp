@@ -40,4 +40,4 @@ const toggleSubmitDisable = () => {
   }
 }
 
-export { addEventListenerforNewComment };
+addEventListenerforNewComment()
