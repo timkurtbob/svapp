@@ -20,6 +20,12 @@ class EntriesController < ApplicationController
     redirect_to @entry
   end
 
+  def update
+    @entry = Entry.find(params[:id])
+    @entry.update(entry_params)
+    redirect_to @entry
+  end
+
   def bee
     @comment = Comment.find(params[:id])
     @entry = @comment.entry
