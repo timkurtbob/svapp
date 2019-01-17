@@ -7,8 +7,9 @@
         <h4><%= entry.created_at.strftime("%Y-%m-%d") %> - <%= entry.created_at.strftime('%H:%M') %></h4>
       </div>
     </div>
-    <i class="far fa-bookmark fa-2x bookmark-icon"></i>
-    <i class="fas fa-bookmark fa-2x bookmark-icon"></i>
+    <div id='<%="entry_#{entry.id.to_s}"%>'>
+      <%= render 'components/bookmark', entry: entry %>
+    </div>
   </div>
   <%= link_to(entry) do %>
     <div class="entry-card-link">

@@ -20,6 +20,20 @@ class EntriesController < ApplicationController
     redirect_to @entry
   end
 
+  def bookmark
+    @entry = Entry.find(params[:id])
+    @bookmark = current_user.bookmarks.find_by(entry_id: @entry.id)
+    if @bookmark
+      @bookmark.destroy
+    else
+      Bookmark.create(entry: @entry, user: current_user)
+    end
+    respond_to do |format|
+      format.html { redirect_to entries_path }
+      format.js # <-- will render `app/views/entries/bookmark.js.erb`
+    end
+  end
+
   def bee
     @comment = Comment.find(params[:id])
     @entry = @comment.entry
