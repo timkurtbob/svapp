@@ -1,5 +1,5 @@
-<div class="card">
-  <div class="card-head">
+<div class="entry-card">
+  <div class="entry-card-head">
     <div class="author-infos big">
       <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'amelie.png' %>);"></div>
       <div>
@@ -7,17 +7,21 @@
         <h4><%= entry.created_at.strftime("%Y-%m-%d") %> - <%= entry.created_at.strftime('%H:%M') %></h4>
       </div>
     </div>
-    <div class="small" id="bookmark" style="background-image: url(<%= asset_path 'bookmark0.svg' %>);"></div>
+    <div id='<%="entry_#{entry.id.to_s}"%>'>
+      <%= render 'components/bookmark', entry: entry %>
+    </div>
   </div>
+  <%= link_to(entry) do %>
+    <div class="entry-card-link">
+      <div class="entry-card-description">
+        <h2 class="red-font bold-font"><%= entry.title %></h2>
+        <p><%= entry.description %></p>
+      </div>
 
-  <div class="card-description">
-    <h2 class="red-font bold-font"><%= entry.title %></h2>
-    <p><%= entry.description %></p>
-  </div>
-
-  <div class="card-foot">
-    <h4 class="red-font semi-bold-font" id="card-date"><%= entry.date %> <%= entry.time %></h4>
-    <h4 class="red-font semi-bold-font"><%= entry.location %></h4>
-  </div>
-  <a class="card-link" href="#" ></a>
+      <div class="entry-card-foot">
+        <h4 class="red-font semi-bold-font" id="entry-card-date"><%= entry.date %> <%= entry.time %></h4>
+        <h4 class="red-font semi-bold-font"><%= entry.location %></h4>
+      </div>
+    </div>
+  <% end %>
 </div>
