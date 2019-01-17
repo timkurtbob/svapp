@@ -1,15 +1,17 @@
-<div class="navbar-wagon">
-  <%= link_to entries_path do %>
-    <i class="fas fa-arrow-left navbar-wagon-item"></i>
-  <% end %>
-  <div>
-    <div class="dropdown">
-      <i class="fas fa-ellipsis-v navbar-wagon-item" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <div data-toggle="modal" data-target="#entryModal">
-          <li><a href="#">Bearbeiten</a></li>
-        </div>
-      </ul>
+<div class="container">
+  <div class="navbar-wagon">
+    <%= link_to entries_path do %>
+      <i class="fas fa-arrow-left navbar-wagon-item"></i>
+    <% end %>
+    <div>
+      <div class="dropdown">
+        <i class="fas fa-ellipsis-v navbar-wagon-item" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <div data-toggle="modal" data-target="#entryModal">
+            <li><a href="#">Bearbeiten</a></li>
+          </div>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
