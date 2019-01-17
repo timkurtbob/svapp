@@ -1,47 +1,26 @@
-.card {
+.entry-card {
   text-shadow: 0 1px 1px rgba(0,0,0,0.4);
   position: relative;
   border-bottom-style: solid;
   border-color: $brand-red;
   border-width: 1px;
-  margin-top: 15px;
+  margin-top: 16px;
 }
 
-#bookmark {
-  background-size: cover;
-  align-items: center;
+.bookmark-icon {
+  margin-right: 10px;
+  color: $brand-red;
 }
 
-.big#bookmark {
-    height: 50px;
-    width: 50px;
-}
-
-.small#bookmark {
-   height: 30px;
-   width: 30px;
-}
-
-.card-head {
+.entry-card-head {
   display: flex;
   justify-content: space-between;
 }
 
-#card-date {
+#entry-card-date {
   font-style: italic;
 }
 
-.card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index: 2;
-  background: black;
-  opacity: 0;
-}
-
-.card-link:hover {
-  opacity: 0.1;
+.entry-card-link:hover {
+  opacity: 0.8;
 }
