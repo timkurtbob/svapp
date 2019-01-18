@@ -11,12 +11,28 @@
     </div>
   </div>
   <div class="entry-body">
-    <h3 class="small-top-bottom-margin semi-bold-font"><%= t @entry.date.strftime('%A') %>, <%= @entry.date.strftime("%d.%m.%Y") %> um <%= @entry.time.strftime('%H:%M')%> Uhr </h3>
-    <h3 class="small-top-bottom-margin semi-bold-font italic-font"><%= @entry.location %></h3>
+    <% if @entry.date %>
+      <h3 class="small-top-bottom-margin semi-bold-font"><%= t @entry.date.strftime('%A') %>, <%= @entry.date.strftime("%d.%m.%Y") %>
+        <% if @entry.time %>
+            um <%= @entry.time.strftime('%H:%M')%> Uhr
+        <% end %>
+      </h3>
+    <% end %>
+    <% if @entry.location %>
+      <h3 class="small-top-bottom-margin semi-bold-font italic-font"><%= @entry.location %></h3>
+    <% end %>
     <h2 class="semi-bold-font small-top-bottom-margin"><%= @entry.title %></h2>
     <p><%= @entry.description %></p>
-    <p class="small-top-bottom-margin"><span class="bold-font">Wann: </span><%= t @entry.date.strftime('%A') %>, <%= @entry.date.strftime("%d.%m.%Y") %> um <%= @entry.time.strftime('%H:%M')%> Uhr </p>
-    <p class="small-top-bottom-margin"><span class="bold-font">Wo: </span><%= @entry.location %></p>
+    <% if @entry.date %>
+      <p class="small-top-bottom-margin"><span class="bold-font">Wann: </span><%= t @entry.date.strftime('%A') %>, <%= @entry.date.strftime("%d.%m.%Y") %>
+        <% if @entry.time %>
+          um <%= @entry.time.strftime('%H:%M')%> Uhr
+        <% end %>
+      </p>
+    <% end %>
+    <% if @entry.location %>
+      <p class="small-top-bottom-margin"><span class="bold-font">Wo: </span><%= @entry.location %></p>
+    <% end %>
   </div>
   <div>
     <div class="comments">
