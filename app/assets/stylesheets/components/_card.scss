@@ -10,6 +10,12 @@
   text-decoration: none;
 }
 
+.author-text {
+  h4 {
+    margin: 0
+  }
+}
+
 .bookmark-icon {
   margin-right: 10px;
   color: $brand-red;

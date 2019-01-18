@@ -2,7 +2,7 @@
   <div class="entry-card-head">
     <div class="author-infos big">
       <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'amelie.png' %>);"></div>
-      <div>
+      <div class="author-text">
         <h4 class="red-font semi-bold-font"><%= entry.user.first_name %> <%= entry.user.second_name %> | <%= entry.user.form %> <%= entry.user.klass %></h4>
         <h4><%= entry.created_at.strftime("%Y-%m-%d")%> - <%= entry.created_at.strftime('%H:%M') %></h4>
       </div>
