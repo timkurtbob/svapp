@@ -1,7 +1,7 @@
 <%= link_to bookmark_path(entry), remote: true do  %>
   <% if current_user.bookmarks.find_by(entry_id: entry.id) %>
-    <i class="far fa-bookmark fa-2x bookmark-icon"></i>
-  <% else %>
     <i class="fas fa-bookmark fa-2x bookmark-icon"></i>
+  <% else %>
+    <i class="far fa-bookmark fa-2x bookmark-icon"></i>
   <% end %>
 <% end %>

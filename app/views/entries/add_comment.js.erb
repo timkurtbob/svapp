@@ -1,7 +1,7 @@
 function addComment() {
-  const lastComment = document.querySelector('.comment')
+  const add_comment_are = document.querySelector('.new-comment-area')
   const html = "<%= j render 'components/comment', comment: @comment %>";
-  lastComment.insertAdjacentHTML('beforebegin', html)
+  add_comment_are.insertAdjacentHTML('afterend', html)
   const inputField = document.getElementById('comment_text');
   inputField.value = '';
 }

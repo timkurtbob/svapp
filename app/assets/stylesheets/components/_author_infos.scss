@@ -1,0 +1,33 @@
+#author-pic {
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.author-infos {
+  display: flex;
+  align-items: center;
+  h3, h5, h4 {
+    margin: 0;
+  }
+  div {
+    h3:first-child, h5:first-child {
+      margin-bottom: 2px;
+    }
+  }
+}
+
+.big {
+  #author-pic {
+    height: 50px;
+    width: 50px;
+    margin: 5px 10px;
+  }
+}
+
+.small {
+  #author-pic {
+    height: 30px;
+    width: 30px;
+    margin: 3px 6px;
+  }
+}

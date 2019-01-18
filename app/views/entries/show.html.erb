@@ -33,15 +33,15 @@
             <%= f.input :text, as: :text, required: true, placeholder: 'Schreibe einen Kommentar...', label: false %>
           </div>
 
-          <div class="form-actions d-none">
+          <div class="form-actions d-none" id="new-comment-buttons">
             <%= f.button :button, 'Abbrechen', type: :reset, class: 'btn-second-choice', id: 'cancel-btn' %>
             <%= f.button :submit, "Kommentieren", disabled: true, class:'btn-first-choice', id: 'submit-btn' %>
           </div>
         <% end %>
       </div>
-        <% @comments.each do |comment| %>
-          <%= render 'components/comment', comment: comment %>
-        <% end %>
+      <% @comments.each do |comment| %>
+        <%= render 'components/comment', comment: comment %>
+      <% end %>
     </div>
   </div>
 </div>

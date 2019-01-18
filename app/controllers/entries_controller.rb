@@ -1,6 +1,4 @@
 class EntriesController < ApplicationController
-  before_action :authenticate_user!, except: %i[index show] # to be adjusted for production!!!
-
   def index
     @entries = Entry.all
     @entry = Entry.new
@@ -33,7 +31,7 @@ class EntriesController < ApplicationController
       format.js # <-- will render `app/views/entries/bookmark.js.erb`
     end
   end
-  
+
   def update
     @entry = Entry.find(params[:id])
     @entry.update(entry_params)
