@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   def index
-    @entries = Entry.all
+    @entries = Entry.all.reject(&:deactivated)
     @entry = Entry.new
   end
 
@@ -67,6 +67,13 @@ class EntriesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def deactivate
+    @entry = Entry.find(params[:id])
+    @entry.deactivated = true
+    @entry.save!
+    redirect_to entries_path
   end
 
   def comment_params
