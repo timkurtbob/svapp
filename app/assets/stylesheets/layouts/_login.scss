@@ -2,6 +2,10 @@
   background-color: $brand-red;
 }
 
+.input-label {
+  color: white;
+}
+
 .landing-description {
   h1, h2 {
 
@@ -14,11 +18,41 @@
 .logo-container{
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  padding-top: 100px;
   margin-bottom: 50px;
 }
 
 .login-form{
   max-width: 400px;
   margin-top: 100px;
+}
+
+#user_email,
+#user_password,
+#user_first_name,
+#user_second_name,
+#user_birthday_3i,
+#user_birthday_2i,
+#user_birthday_1i,
+#user_school_id,
+#user_form,
+#user_klass,
+#user_role,
+#user_email,
+#user_password,
+#user_password_confirmation {
+  font-size: 16px;
+  background-color: $brand-red;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  border-bottom: 0.5px solid white;
+  padding: 0;
+  color: white;
+}
+
+.registration-title {
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

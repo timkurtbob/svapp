@@ -10,13 +10,31 @@
         <%= simple_form_for(@entry, html: { autocomplete: 'off', wrap: 'hard'}) do |f| %>
           <%= f.error_notification %>
           <div class="modal-input-field">
-            <%= f.input :title, label: "Titel", required: true %>
-            <%= f.input :description, label: "Beschreibung", as: :text, required: true %>
-            <%= f.input :date, as: :date, label: "Datum",required: false %>
+            <%= f.input :title,
+                        label: "Titel",
+                        label_html: { :class => 'white-form' },
+                        required: true %>
+            <%= f.input :description,
+                        label: "Beschreibung",
+                        label_html: { :class => 'white-form' },
+                        as: :text,
+                        required: true %>
+            <%= f.input :date,
+                        as: :date,
+                        label: "Datum",
+                        label_html: { :class => 'white-form' },
+                        required: false %>
             <div class="bottom-border">
-              <%= f.input :time, as: :time, label: "Zeit",required: false %>
+              <%= f.input :time,
+                          as: :time,
+                          label: "Zeit",
+                          label_html: { :class => 'white-form' },
+                          required: false %>
             </div>
-            <%= f.input :location, label: "Ort",required: false %>
+            <%= f.input :location,
+                        label: "Ort",
+                        label_html: { :class => 'white-form' },
+                        required: false %>
           </div>
 
           <div class="form-actions">
