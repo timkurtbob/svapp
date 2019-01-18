@@ -69,6 +69,13 @@ class EntriesController < ApplicationController
     end
   end
 
+  def deactivate
+    @entry = Entry.find(params[:id])
+    @entry.deactivated = true
+    @entry.save!
+    redirect_to entries_path
+  end
+
   def comment_params
     params.require(:comment).permit(:text)
   end
