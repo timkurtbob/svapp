@@ -1,13 +1,15 @@
 class EntriesController < ApplicationController
-  before_action :authenticate_user!, except: %i[index show] # to be adjusted for production!!!
+  after_action :verify_authorized, except: :index
+
 
   def index
-    @entries = Entry.all
+    @entries = policy_scope(Entry)
     @entry = Entry.new
   end
 
   def show
     @entry = Entry.find(params[:id])
+    authorize @entry
     @author = @entry.user
     @comments = @entry.comments.reverse
     @comment = Comment.new
@@ -15,6 +17,7 @@ class EntriesController < ApplicationController
 
   def create
     @entry = Entry.new(entry_params)
+    authorize @entry
     @entry.user = current_user
     @entry.save
     redirect_to @entry
@@ -22,6 +25,7 @@ class EntriesController < ApplicationController
 
   def bookmark
     @entry = Entry.find(params[:id])
+    authorize @entry
     @bookmark = current_user.bookmarks.find_by(entry_id: @entry.id)
     if @bookmark
       @bookmark.destroy
@@ -33,9 +37,10 @@ class EntriesController < ApplicationController
       format.js # <-- will render `app/views/entries/bookmark.js.erb`
     end
   end
-  
+
   def update
     @entry = Entry.find(params[:id])
+    authorize @entry
     @entry.update(entry_params)
     redirect_to @entry
   end
@@ -43,6 +48,7 @@ class EntriesController < ApplicationController
   def bee
     @comment = Comment.find(params[:id])
     @entry = @comment.entry
+    authorize @entry
     @bee = current_user.bees.find_by(comment_id: @comment.id)
     if @bee
       @bee.destroy
@@ -57,6 +63,7 @@ class EntriesController < ApplicationController
 
   def add_comment
     @entry = Entry.find(params[:id])
+    authorize @entry
     @comment = Comment.new(comment_params)
     @comment.entry = @entry
     @comment.user = current_user
