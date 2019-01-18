@@ -20,7 +20,9 @@
           </div>
 
           <div class="form-actions">
-            <%= f.button :button, 'Abbrechen', type: :reset, class: 'btn-second-choice' %>
+            <button class="btn btn-second-choice" data-dismiss="modal" aria-label="Close">
+              Abbrechen
+            </button>
             <%= f.button :submit, "Veröffentlichen", class:'btn-first-choice' %>
           </div>
         <% end %>

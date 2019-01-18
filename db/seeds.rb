@@ -98,7 +98,7 @@ user_six = User.create(
   form: 1,
   klass: 'b',
   role: 'KlassensprecherIn',
-  # email: not provided,
+  email: 'chiara-sonntag@buegermeister-herz-schule.de',
   # phone: not provided,
   # snapchat_user: not provided,
   # insta_user: not provided,
