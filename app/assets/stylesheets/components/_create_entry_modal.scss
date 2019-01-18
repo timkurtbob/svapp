@@ -45,9 +45,15 @@
   box-shadow: none;
 }
 
-.form-control-label {
+.form-control-label.white-form {
   margin-bottom: 0;
   font-size: 12px;
   font-weight: 600;
   color: $brand-red;
+}
+
+.form-control-label.red-form {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
 }
