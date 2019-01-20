@@ -32,7 +32,7 @@ class EntryPolicy < ApplicationPolicy
 
 
   def deactivate?
-    user_is_moderator?
+    user.present?
   end
 
 

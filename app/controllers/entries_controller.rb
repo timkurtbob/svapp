@@ -80,6 +80,7 @@ class EntriesController < ApplicationController
 
   def deactivate
     @entry = Entry.find(params[:id])
+    authorize @entry
     @entry.deactivated = true
     @entry.save!
     redirect_to entries_path
