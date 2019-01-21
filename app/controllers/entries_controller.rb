@@ -45,6 +45,10 @@ class EntriesController < ApplicationController
     end
   end
 
+  # def my_bookmarks
+  #   @my_bookmarks = current_user.bookmarks
+  # end
+
   def bee
     @comment = Comment.find(params[:id])
     @entry = @comment.entry
