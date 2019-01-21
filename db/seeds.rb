@@ -18,15 +18,9 @@ school = School.create(name: 'Bürgermeister Herz Grundschule')
 user_one = User.create(
   first_name: 'Annika',
   second_name: 'Schmidt',
-  birthday: Date.new(2006, 5, 22),
-  form: 6,
-  klass: 'a',
-  role: 'SchulsprecherIn',
+  role: 'Super-Admin',
   email: 'annika@schmidt.de',
   phone: '+4915758942993',
-  snapchat_user: '@anniannianni',
-  insta_user: '@anni2006',
-  tiktok_user: '@annischmidt06',
   school_id: school.id,
   password: 'xxxxxx'
   )
@@ -34,75 +28,44 @@ user_one = User.create(
 user_two = User.create(
   first_name: 'Tim',
   second_name: 'Kurt-Bob',
-  birthday: Date.new(2010, 7, 29),
-  form: 2,
-  klass: 'b',
-  role: 'KlassensprecherIn',
+  role: 'Super-Admin',
   email: 'tim-kurt-bob@aol.de',
   phone: '+4912758141004',
-  snapchat_user: '@tkb',
-  insta_user: '@tkb',
-  tiktok_user: '@tkb2010',
   school_id: school.id,
   password: 'xxxxxx'
   )
 user_three = User.create(
   first_name: 'Jeanette',
   second_name: 'Müller',
-  birthday: Date.new(2009, 10, 1),
-  form: 5,
-  klass: 'a',
-  role: 'KlassensprecherIn',
+  role: 'Super-Admin',
   email: 'j-mueller@gmail.de',
   phone: '+4912152341722',
-  snapchat_user: '@jjm2009',
-  insta_user: '@jjm2009',
-  tiktok_user: '@jjm2009',
   school_id: school.id,
   password: 'xxxxxx'
   )
 user_four = User.create(
   first_name: 'Leon',
   second_name: 'Kawiro',
-  birthday: Date.new(2006, 12, 1),
-  form: 2,
-  klass: 'c',
-  role: 'KlassensprecherIn',
+  role: 'Super-Admin',
   email: 'leon-kawi@gmail.de',
   phone: '+491725241002',
-  snapchat_user: '@leonleon',
-  insta_user: '@leonleon',
-  tiktok_user: '@leonleon',
   school_id: school.id,
   password: 'xxxxxx'
   )
 user_five = User.create(
   first_name: 'Yannick',
   second_name: 'Moring',
-  birthday: Date.new(2010, 4, 19),
-  form: 6,
-  klass: 'b',
-  role: 'KlassensprecherIn',
+  role: 'Super-Admin',
   email: 'y.moring@web.de',
   phone: '+49166209531099',
-  snapchat_user: '@yanni-mori',
-  insta_user: '@yanni-mori',
-  tiktok_user: '@yanni-mori',
   school_id: school.id,
   password: 'xxxxxx'
   )
 user_six = User.create(
   first_name: 'Chiara',
   second_name: 'Sonntag',
-  birthday: Date.new(2005, 2, 16),
-  form: 1,
-  klass: 'b',
-  role: 'KlassensprecherIn',
+  role: 'Super-Admin',
   email: 'chiara-sonntag@buegermeister-herz-schule.de',
-  # phone: not provided,
-  # snapchat_user: not provided,
-  # insta_user: not provided,
-  # tiktok_user: not provided,
   school_id: school.id,
   password: 'xxxxxx'
   )

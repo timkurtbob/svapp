@@ -54,7 +54,7 @@
           <%= f.input :role,
                       label: 'Ich bin:',
                       label_html: { :class => 'red-form' },
-                      collection: ['KlassensprecherIn', 'JahrgangssprecherIn', 'SchulsprecherIn', 'ModeratorIn', 'LehrerIn'],
+                      collection: ['Beobachter', 'Mitglied', 'Admin', 'Super-Admin'],
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "last_name" }%>
