@@ -1,0 +1,34 @@
+
+<!-- Sidebar -->
+<nav id="sidebar">
+  <!-- Burger menu item to close sidebar -->
+  <div id="dismiss">
+    <i class="fas fa-bars shadowless"></i>
+  </div>
+  <div class="sidebar-content">
+    <%= link_to entries_path do %>
+      <i class="fas fa-home">
+        <span> Timeline</span>
+      </i>
+    <% end %>
+    <%#= link_to my_bookmarks_path do %>
+      <!-- <i class="fas fa-bookmark">
+        <span> Meine Lesezeichen</span>
+      </i> -->
+    <%# end %>
+    <div id="log-out-div">
+      <%= link_to(destroy_user_session_path, method: 'delete', class: "sidebar-icon-blue") do %>
+        <h3>LOG OUT <i class="fas fa-sign-out-alt shadowless"></i></h3>
+      <% end %>
+    </div>
+  </div>
+</nav>
+
+
+<!-- dark overlay to show if sidebar is shown -->
+<div class="overlay"></div>
+
+<!-- Burger menu item to open sidebar -->
+<div id="sidebarCollapse">
+    <i class="fas fa-bars"></i>
+</div>
