@@ -26,31 +26,10 @@
                       required: true,
                       autofocus: true ,
                       input_html: { autocomplete: "last_name" }%>
-          <%= f.input :birthday,
-                      label: 'Geburtstag',
-                      label_html: { :class => 'red-form' },
-                      as: :date,
-                      order: [:day, :month, :year],
-                      start_year: Date.today.year - 70,
-                      end_year: Date.today.year - 10,
-                      required: true %>
           <%= f.association :school,
                       label: 'Schule',
                       label_html: { :class => 'red-form' },
                       collection: School.order(:name) %>
-          <%= f.input :form,
-                      label: 'Jahrgang',
-                      label_html: { :class => 'red-form' },
-                      collection: 5..13,
-                      required: true,
-                      autofocus: true ,
-                      input_html: { autocomplete: "last_name" }%>
-          <%= f.input :klass,
-                      label: 'Klasse',
-                      label_html: { :class => 'red-form' },
-                      required: true,
-                      autofocus: true ,
-                      input_html: { autocomplete: "last_name" }%>
           <%= f.input :role,
                       label: 'Ich bin:',
                       label_html: { :class => 'red-form' },
