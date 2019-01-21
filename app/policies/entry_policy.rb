@@ -30,6 +30,9 @@ class EntryPolicy < ApplicationPolicy
     user.present?
   end
 
+  def add_comment?
+    user.present?
+  end
 
   def deactivate?
     user.present?

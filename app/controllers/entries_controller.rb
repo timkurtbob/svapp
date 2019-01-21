@@ -23,6 +23,13 @@ class EntriesController < ApplicationController
     redirect_to @entry
   end
 
+  def update
+    @entry = Entry.find(params[:id])
+    authorize @entry
+    @entry.update(entry_params)
+    redirect_to @entry
+  end
+
   def bookmark
     @entry = Entry.find(params[:id])
     authorize @entry
@@ -36,13 +43,6 @@ class EntriesController < ApplicationController
       format.html { redirect_to entries_path }
       format.js # <-- will render `app/views/entries/bookmark.js.erb`
     end
-  end
-
-  def update
-    @entry = Entry.find(params[:id])
-    authorize @entry
-    @entry.update(entry_params)
-    redirect_to @entry
   end
 
   def bee
@@ -69,7 +69,8 @@ class EntriesController < ApplicationController
     @comment.user = current_user
     # authorize @comment
     if @comment.save
-      respond_to do |format|
+      respond_to do |format|    authorize @entry
+
         format.html { redirect_to entry_path(@entry) }
         format.js # <-- will render `app/views/entries/add_comment.js.erb`
       end
