@@ -21,6 +21,7 @@
                         required: true %>
             <%= f.input :date,
                         as: :date,
+                        order: [:day, :month, :year],
                         label: "Datum",
                         label_html: { :class => 'white-form' },
                         required: false %>
