@@ -1,8 +1,8 @@
 <%= render 'components/navbar_burger_only' %>
-<div class="container">
+<div class="container margin-top-30 users-list">
   <% @users.each do |user| %>
     <%= link_to user_path(user) do  %>
-      <div class="author-infos big">
+      <div class="author-infos big list-item">
         <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'amelie.png' %>);">
         </div>
         <div>

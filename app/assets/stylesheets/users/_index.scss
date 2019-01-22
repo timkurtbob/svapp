@@ -1,0 +1,19 @@
+.list-item {
+  padding: 10px 0;
+  border-bottom: 0.5px solid black;
+  h3 {
+    margin: 0px !important;
+  }
+  &:hover {
+    background-color: $brand-red;
+    color: white;
+    h3 {
+      color: white;
+    }
+  }
+}
+a:last-child {
+  .list-item {
+    border-bottom: none;
+  }
+}

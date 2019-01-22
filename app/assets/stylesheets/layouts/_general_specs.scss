@@ -30,6 +30,12 @@ h2, h3, h4, h5, p {
   color: $letter-gray;
 }
 
+a {
+  &:hover {
+  text-decoration: none;
+  }
+}
+
 .red-font {
   color: $brand-red;
 }
@@ -89,4 +95,8 @@ h2, h3, h4, h5, p {
 
 .top-padding-15 {
   padding-top: 15px;
+}
+
+.margin-top-30 {
+  margin-top: 30px;
 }
