@@ -6,9 +6,15 @@
     <i class="fas fa-bars shadowless"></i>
   </div>
   <div class="sidebar-content">
+    <h2>SV-App</h2>
     <%= link_to entries_path do %>
       <i class="fas fa-home">
         <span> Timeline</span>
+      </i>
+    <% end %>
+    <%= link_to user_path(current_user) do  %>
+      <i class="fas fa-user">
+        <span> Mein Profil</span>
       </i>
     <% end %>
     <%= link_to users_path do %>
