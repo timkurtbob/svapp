@@ -1,8 +1,8 @@
 <%= render 'components/navbar_user_show' %>
-<div class="author-infos big">
+<div class="profile-box">
   <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'amelie.png' %>);">
   </div>
   <div>
-    <h3 class="red-font bold-font"><%= @user.first_name %> <%= @user.second_name %> | <%= @user.form %><%= @user.klass %></h3>
+    <h2 class="red-font bold-font margin-top-30"><%= @user.first_name %> <%= @user.second_name %> | <%= @user.form %><%= @user.klass %></h2>
   </div>
 </div>
