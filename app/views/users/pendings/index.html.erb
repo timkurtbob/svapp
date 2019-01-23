@@ -2,17 +2,16 @@
   <% @pending_users.each do |user| %>
 
     <%= link_to '#' do  %>
-      <div class="author-infos big list-item">
-        <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'amelie.png' %>);">
+      <div class="author-infos big list-item justify-content-between">
+        <div class="items-left d-flex align-items-center">
+          <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'amelie.png' %>);">
+          </div>
+          <div>
+            <h3 class="red-font bold-font"><%= user.first_name %> <%= user.second_name %> |  Status: <%= user.approved ? "approved!" : "Pending" %></h3>
+            <h3><%= user.role %></h3>
+          </div>
         </div>
-        <div>
-          <h3 class="red-font bold-font"><%= user.first_name %> <%= user.second_name %> |  Status: <%= user.approved ? "approved!" : "Pending" %></h3>
-          <%= render 'boolean_button', user: user %>
-          <h3><%= user.role %></h3>
-
-
-          </form>
-        </div>
+        <%= render 'boolean_button', user: user %>
       </div>
     <% end %>
   <% end %>
