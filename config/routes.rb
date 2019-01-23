@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :pendings, only: :index
   end
   resources :users, only: [:index, :show]
+
   get 'comments/:id/bee', to: 'entries#bee', as: 'bee'
 
   post '/entries/:id/comments', to: 'entries#add_comment', as: 'add_comment'

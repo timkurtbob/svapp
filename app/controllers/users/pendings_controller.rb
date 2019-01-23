@@ -1,6 +1,5 @@
 class Users::PendingsController < ApplicationController
   def index
-   @pendings = policy_scope([:pending, User.super_admin])
-
+   @pending_users = policy_scope([:pending, User.beobachter])
   end
 end
