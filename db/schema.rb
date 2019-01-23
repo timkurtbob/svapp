@@ -81,14 +81,8 @@ ActiveRecord::Schema.define(version: 2019_01_18_133238) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "second_name"
-    t.date "birthday"
-    t.string "klass"
-    t.integer "form"
     t.string "phone"
     t.string "role"
-    t.string "snapchat_user"
-    t.string "insta_user"
-    t.string "tiktok_user"
     t.bigint "school_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
