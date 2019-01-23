@@ -9,6 +9,7 @@
 
 puts 'destroying tables...'
 
+
 Bee.destroy_all
 Comment.destroy_all
 Bookmark.destroy_all
