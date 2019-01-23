@@ -148,7 +148,6 @@ Bee.create(
   user: user_four,
   comment: comment_four
   )
-
 entry_three = Entry.create(
   title: 'Helfter für Infotag gesucht',
   description: 'Am Samstag, 21. März 2019 können Familien uns beim  Infotag kennenlernen. In der Aula bekommen sie in kurzen Vorträgen wichtige Informationen zum Profil der unserer Schulen. In den Klassen- und Fachräumen stellen sich die Fachbereiche und einzelne Projekte vor.

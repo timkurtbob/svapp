@@ -1,4 +1,15 @@
-<h1>HELLO WORLD</h1>
-<% @pending_users.each do |user| %>
-  <h1><%= user.first_name%></h1>
-<% end %>
+<div class="container margin-top-30 users-list">
+  <% @pending_users.each do |user| %>
+
+    <%= link_to '#' do  %>
+      <div class="author-infos big list-item">
+        <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'amelie.png' %>);">
+        </div>
+        <div>
+          <h3 class="red-font bold-font"><%= user.first_name %> <%= user.second_name %> |  Status: Pending</h3>
+          <h3><%= user.role %></h3>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
