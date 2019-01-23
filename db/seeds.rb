@@ -5,15 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+puts 'destroying tables...'
+
+Bee.destroy_all
 Comment.destroy_all
 Bookmark.destroy_all
-Bee.destroy_all
 Attachment.destroy_all
 Entry.destroy_all
 User.destroy_all
 School.destroy_all
 
+
+puts 'creating schools...'
+
 school = School.create(name: 'Bürgermeister Herz Grundschule')
+
+puts 'creating users...'
 
 user_one = User.create(
   first_name: 'Annika',
@@ -69,6 +78,8 @@ user_six = User.create(
   school_id: school.id,
   password: 'xxxxxx'
   )
+
+puts 'creating entries, comments and bees...'
 
 entry_one = Entry.create(
   title: 'Schulsprecherwahl',
