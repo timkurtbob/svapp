@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :entries, only: [ :index, :show, :create, :update]
 
   namespace :users do
-    resources :pendings, only: :index
+    resources :pendings, only: [:index, :create]
   end
   resources :users, only: [:index, :show]
 

@@ -26,8 +26,8 @@ school = School.create(name: 'Bürgermeister Herz Grundschule')
 puts 'creating users...'
 
 user_one = User.create(
-  first_name: 'admin',
-  second_name: 'admin',
+  first_name: 'Annika',
+  second_name: 'Schmidt',
   role: 0,
   email: 'annika@schmidt.de',
   phone: '+4915758942993',

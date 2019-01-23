@@ -4,4 +4,8 @@ class Pending::UserPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def create?
+    user.admin? || user.super_admin?
+  end
 end
