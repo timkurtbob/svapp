@@ -5,7 +5,7 @@ class Pending::UserPolicy < ApplicationPolicy
     end
   end
 
-  def create?
+  def update?
     user.admin? || user.super_admin?
   end
 end

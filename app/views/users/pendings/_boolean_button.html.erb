@@ -1,4 +1,5 @@
-<%= simple_form_for(@user) do |f| %>
+<%= simple_form_for user, url: users_pending_path(user), method: :post  do |f| %>
   <%= f.input :approved, as: :boolean  %>
   <%= f.button :submit %>
 <% end %>
+
