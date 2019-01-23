@@ -1,7 +1,7 @@
 <%= simple_form_for user, url: users_pending_path(user) do |f| %>
   <div class="row">
     <%= f.input :approved, label: 'Approve', as: :boolean,  boolean_style: :inline  %>
-    <%= f.button :submit %>
+    <%= f.button :submit, class: 'btn-pending' %>
   </div>
 <% end %>
 

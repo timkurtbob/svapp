@@ -2,7 +2,7 @@
   <% @pending_users.each do |user| %>
 
     <%= link_to '#' do  %>
-      <div class="author-infos big list-item justify-content-between">
+      <div class="author-infos big list-item justify-content-between pr-2">
         <div class="items-left d-flex align-items-center">
           <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'amelie.png' %>);">
           </div>
@@ -11,7 +11,7 @@
             <h3><%= user.role %></h3>
           </div>
         </div>
-        <%= render 'boolean_button', user: user %>
+        <%= button_to 'Approve', users_pending_path(user), class: 'btn-pending', data: {confirm: "Approve #{user.first_name}?"},  method: :patch %>
       </div>
     <% end %>
   <% end %>
