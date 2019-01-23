@@ -11,7 +11,7 @@
             <h3><%= user.role %></h3>
           </div>
         </div>
-        <%= button_to 'Approve', users_pending_path(user), class: 'btn-pending', data: {confirm: "Approve #{user.first_name}?"},  method: :patch %>
+        <%= button_to 'Approve', users_pending_path(user), class: 'btn-pending', data: { confirm: "Approve #{user.first_name}?" },  method: :patch %>
       </div>
     <% end %>
   <% end %>
