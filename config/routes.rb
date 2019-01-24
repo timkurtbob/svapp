@@ -4,15 +4,15 @@ Rails.application.routes.draw do
 
   root to: 'entries#index'
 
+  namespace :entries do
+    resources :archives, only: [:index, :update]
+  end
   resources :entries, only: [ :index, :show, :create, :update]
 
   namespace :users do
     resources :pendings, only: [:index, :update]
   end
 
-  namespace :entries do
-    resources :archives, only: [:update]
-  end
   resources :users, only: [:index, :show]
 
   get 'comments/:id/bee', to: 'entries#bee', as: 'bee'
