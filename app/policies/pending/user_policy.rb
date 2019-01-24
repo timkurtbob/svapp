@@ -1,7 +1,9 @@
 class Pending::UserPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      if user.admin? || user.super_admin?
+        scope.all
+      end
     end
   end
 

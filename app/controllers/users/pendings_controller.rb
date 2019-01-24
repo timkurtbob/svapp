@@ -1,6 +1,9 @@
 class Users::PendingsController < ApplicationController
   def index
-   @pending_users = policy_scope([:pending, User.where(approved: false)])
+    @pending_users = policy_scope([:pending, User.where(approved: false)])
+    if current_user.mitglied? && current_user.approved
+      redirect_to user_path(current_user), notice: 'Your Account has already been approved!'
+    end
   end
 
   def update

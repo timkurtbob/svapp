@@ -19,7 +19,7 @@ class EntryPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user || user.admin? || user.super_admin?
+    record.user == user  && (user.mitglied? || user.admin? || user.super_admin?)
 
   end
 
