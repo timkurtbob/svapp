@@ -7,6 +7,10 @@ class EntriesController < ApplicationController
     @entry = Entry.new
   end
 
+  def sort()
+   raise
+  end
+
   def show
     @entry = Entry.find(params[:id])
     authorize @entry
