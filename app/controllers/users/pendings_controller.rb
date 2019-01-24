@@ -14,8 +14,9 @@ class Users::PendingsController < ApplicationController
       redirect_to users_pendings_path
       flash[:notice] = "User #{@pending_user.first_name} has been approved!"
     else
+      raise
       redirect_to users_pendings_path
-      flash[:alert] =  "Something went wrong..."
+      flash[:error] =  "Something went wrong..."
     end
   end
 

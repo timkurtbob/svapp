@@ -35,5 +35,8 @@ class EntryPolicy < ApplicationPolicy
     user.mitglied? || user.admin? || user.super_admin?
   end
 
+  def deactivate?
+    record.user == user || user.admin? || user.super_admin?
+  end
 
 end
