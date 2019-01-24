@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :pendings, only: [:index, :update]
   end
 
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :update]
 
   get 'comments/:id/bee', to: 'entries#bee', as: 'bee'
 

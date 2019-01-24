@@ -2,9 +2,6 @@ class Entries::ArchivesController < ApplicationController
 
   def index
     @archived_entries = policy_scope([:archive, Entry.where(deactivated: true)])
-    if !@archived_entries
-      @archived_entries = []
-    end
   end
 
   def update
