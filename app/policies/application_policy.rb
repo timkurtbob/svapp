@@ -8,15 +8,15 @@ class ApplicationPolicy
 
 
   def index?
-    false
+    user.admin? || user.super_admin?
   end
 
   def show?
-    false
+    user.admin? || user.super_admin?
   end
 
   def create?
-    false
+    user.admin? || user.super_admin?
   end
 
   def new?
@@ -24,7 +24,7 @@ class ApplicationPolicy
   end
 
   def update?
-    false
+    user.admin? || user.super_admin?
   end
 
   def edit?
@@ -32,7 +32,7 @@ class ApplicationPolicy
   end
 
   def destroy?
-    false
+    user.admin? || user.super_admin?
   end
 
   class Scope
