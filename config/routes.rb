@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   devise_for :users
 
   root to: 'entries#index'
 
   resources :entries, only: [ :index, :show, :create, :update]
+
+  namespace :users do
+    resources :pendings, only: [:index, :update]
+  end
+  resources :users, only: [:index, :show]
 
   get 'comments/:id/bee', to: 'entries#bee', as: 'bee'
 
@@ -11,7 +17,5 @@ Rails.application.routes.draw do
   get 'entries/:id/bookmark', to: 'entries#bookmark', as: 'bookmark'
   post 'entries/:id/deactivate', to: 'entries#deactivate', as: 'deactivate'
 
-  get 'users', to: 'users#index', as: 'users'
-  get 'users/:id', to: 'users#show', as: 'user'
   # get 'bookmarks', to: 'entries#my_bookmarks', as: 'my_bookmarks'
 end

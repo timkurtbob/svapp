@@ -1,15 +1,24 @@
 class UserPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      if user.admin? || user.super_admin?
+        scope.all
+      else
+        scope.where(id: user.id)
+      end
+
     end
   end
 
   def index?
-    user.present?
+    user.admin? || user.super_admin?
   end
 
   def show?
-    user.present?
+    record == user|| user.admin? || user.super_admin?
+  end
+
+  def update?
+    record == user || user.admin? || user.super_admin?
   end
 end

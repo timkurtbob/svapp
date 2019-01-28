@@ -8,4 +8,7 @@ class User < ApplicationRecord
   has_many :bees
   has_many :bookmarks
   belongs_to :school
+
+  enum role: { super_admin: 0, admin: 1, mitglied: 2, beobachter: 3 }
+
 end

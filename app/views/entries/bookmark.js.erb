@@ -1,8 +1,8 @@
 function toggleBookmark() {
   // toggling the icon
   html = '<%= j render "components/bookmark", entry: @entry %>'
-  const bookmark_container = document.getElementById('<%="entry_#{@entry.id}"%>');
-  bookmark_container.innerHTML = html
+  const bookmarkContainer = document.getElementById('<%="entry_#{@entry.id}"%>');
+  bookmarkContainer.innerHTML = html
 }
 
 toggleBookmark()

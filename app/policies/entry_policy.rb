@@ -15,33 +15,28 @@ class EntryPolicy < ApplicationPolicy
   end
 
   def create?
-    user.present?
+    user.mitglied? || user.admin? || user.super_admin?
   end
 
   def update?
-    user.present?
+    record.user == user  && (user.mitglied? || user.admin? || user.super_admin?)
+
   end
 
   def bookmark?
-    user.present?
+    user.mitglied? || user.admin? || user.super_admin?
   end
 
   def bee?
-    user.present?
+    user.mitglied? || user.admin? || user.super_admin?
   end
 
   def add_comment?
-    user.present?
+    user.mitglied? || user.admin? || user.super_admin?
   end
 
   def deactivate?
-    user.present?
+    record.user == user || user.admin? || user.super_admin?
   end
 
-
-  private
-
-  def user_is_moderator?
-    @user.role === 'ModeratorIn'
-  end
 end

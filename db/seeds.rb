@@ -9,6 +9,7 @@
 
 puts 'destroying tables...'
 
+
 Bee.destroy_all
 Comment.destroy_all
 Bookmark.destroy_all
@@ -27,7 +28,7 @@ puts 'creating users...'
 user_one = User.create(
   first_name: 'Annika',
   second_name: 'Schmidt',
-  role: 'Super-Admin',
+  role: 0,
   email: 'annika@schmidt.de',
   phone: '+4915758942993',
   school_id: school.id,
@@ -37,7 +38,7 @@ user_one = User.create(
 user_two = User.create(
   first_name: 'Tim',
   second_name: 'Kurt-Bob',
-  role: 'Super-Admin',
+  role: 0,
   email: 'tim-kurt-bob@aol.de',
   phone: '+4912758141004',
   school_id: school.id,
@@ -46,7 +47,7 @@ user_two = User.create(
 user_three = User.create(
   first_name: 'Jeanette',
   second_name: 'Müller',
-  role: 'Super-Admin',
+  role: 0,
   email: 'j-mueller@gmail.de',
   phone: '+4912152341722',
   school_id: school.id,
@@ -55,7 +56,7 @@ user_three = User.create(
 user_four = User.create(
   first_name: 'Leon',
   second_name: 'Kawiro',
-  role: 'Super-Admin',
+  role: 0,
   email: 'leon-kawi@gmail.de',
   phone: '+491725241002',
   school_id: school.id,
@@ -64,7 +65,7 @@ user_four = User.create(
 user_five = User.create(
   first_name: 'Yannick',
   second_name: 'Moring',
-  role: 'Super-Admin',
+  role: 0,
   email: 'y.moring@web.de',
   phone: '+49166209531099',
   school_id: school.id,
@@ -73,7 +74,7 @@ user_five = User.create(
 user_six = User.create(
   first_name: 'Chiara',
   second_name: 'Sonntag',
-  role: 'Super-Admin',
+  role: 0,
   email: 'chiara-sonntag@buegermeister-herz-schule.de',
   school_id: school.id,
   password: 'xxxxxx'
@@ -147,7 +148,6 @@ Bee.create(
   user: user_four,
   comment: comment_four
   )
-
 entry_three = Entry.create(
   title: 'Helfter für Infotag gesucht',
   description: 'Am Samstag, 21. März 2019 können Familien uns beim  Infotag kennenlernen. In der Aula bekommen sie in kurzen Vorträgen wichtige Informationen zum Profil der unserer Schulen. In den Klassen- und Fachräumen stellen sich die Fachbereiche und einzelne Projekte vor.
