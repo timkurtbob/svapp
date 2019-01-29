@@ -4,18 +4,21 @@ Rails.application.routes.draw do
 
   root to: 'entries#index'
 
+  namespace :entries do
+    resources :archives, only: [:index, :update]
+  end
   resources :entries, only: [ :index, :show, :create, :update]
 
   namespace :users do
     resources :pendings, only: [:index, :update]
   end
-  resources :users, only: [:index, :show]
+
+  resources :users, only: [:index, :show, :update]
 
   get 'comments/:id/bee', to: 'entries#bee', as: 'bee'
 
   post '/entries/:id/comments', to: 'entries#add_comment', as: 'add_comment'
   get 'entries/:id/bookmark', to: 'entries#bookmark', as: 'bookmark'
-  post 'entries/:id/deactivate', to: 'entries#deactivate', as: 'deactivate'
 
   # get 'bookmarks', to: 'entries#my_bookmarks', as: 'my_bookmarks'
 end

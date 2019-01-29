@@ -19,12 +19,15 @@
       </div>
 
       <div class="entry-card-foot">
+        <div>
+
         <% if entry.time %>
           <h4 class="red-font semi-bold-font" id="entry-card-date"><%= entry.date.strftime('%A') %>, <%= entry.date.strftime("%d.%m.%Y") %> um <%= entry.time.strftime('%H:%M')%> Uhr</h4>
         <% end %>
         <% if entry.location %>
           <h4 class="red-font semi-bold-font"><%= entry.location %></h4>
         <% end %>
+        </div>
       </div>
     </div>
   <% end %>

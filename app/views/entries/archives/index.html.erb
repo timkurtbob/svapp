@@ -1,0 +1,12 @@
+<%= render 'components/entries_navbar' %>
+<div class="container">
+  <% if @archived_entries &&  @archived_entries.length > 0 %>
+    <% @archived_entries.each do |entry| %>
+      <%= render 'components/card', entry: entry %>
+    <% end %>
+  <% else %>
+    <div class="inner text-center margin-top-30">
+      <h1 class="red-font">No Archived Entries Listed</h1>
+    </div>
+  <% end %>
+</div>
