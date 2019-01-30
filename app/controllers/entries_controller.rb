@@ -1,14 +1,15 @@
 class EntriesController < ApplicationController
   after_action :verify_authorized, except: :index
 
-
   def index
     @entries = policy_scope(Entry).reject(&:deactivated)
     @entry = Entry.new
   end
 
-  def sort()
-   raise
+  def sort_newest
+    @entries = policy_scope(Entry).reject(&:deactivated)
+    @entries.sort_by(&:date)
+    @entry = Entry.new
   end
 
   def show

@@ -1,6 +1,6 @@
 <%= render 'components/entries_navbar' %>
 <div class="container">
-  <% @entries.sort_by(&:date).each do |entry| %>
+  <% @entries.each do |entry| %>
     <%= render 'components/card', entry: entry %>
   <% end %>
 </div>

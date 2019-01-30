@@ -3,7 +3,13 @@ Rails.application.routes.draw do
 
   root to: 'entries#index'
 
-  resources :entries, only: [ :index, :show, :create, :update]
+  resources :entries, only: [ :index, :show, :create, :update] do
+    collection do
+      get :sort_newest
+      # get :next
+      # get :last
+    end
+  end
 
   get 'comments/:id/bee', to: 'entries#bee', as: 'bee'
 
@@ -11,7 +17,7 @@ Rails.application.routes.draw do
   get 'entries/:id/bookmark', to: 'entries#bookmark', as: 'bookmark'
   post 'entries/:id/deactivate', to: 'entries#deactivate', as: 'deactivate'
 
-  get 'entries/all/:sorting', to: "entries#sort"
+  # get 'entries/:sort_newest', to: "entries#sort_newest"
   get 'users', to: 'users#index', as: 'users'
   get 'users/:id', to: 'users#show', as: 'user'
   # get 'bookmarks', to: 'entries#my_bookmarks', as: 'my_bookmarks'
