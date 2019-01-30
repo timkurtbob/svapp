@@ -17,10 +17,14 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       @user.role = edit_user_params[:role].to_i
       authorize @user
-      if @user.save
-        redirect_to user_path(@user), notice: "Sucessfully changed #{@user.first_name} to #{@user.role}."
+      if  edit_user_params[:role].to_i == 0  && !current_user.super_admin?
+          redirect_to users_path, alert: "You don't have this permission."
       else
-        redirect_to user_path(@user), alert: "Could not update role."
+        if @user.save
+          redirect_to user_path(@user), notice: "Sucessfully changed #{@user.first_name} to #{@user.role}."
+        else
+          redirect_to user_path(@user), alert: "Could not update role."
+        end
       end
     else
       redirect_to user_path(@user), alert: "You don't have permission to update the role."
