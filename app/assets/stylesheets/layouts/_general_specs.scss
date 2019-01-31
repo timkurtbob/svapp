@@ -69,6 +69,12 @@ a {
   padding: 4px 15px;
 }
 
+.btn-second-choice:hover {
+  color: $brand-red;
+  opacity: 0.8;
+  text-decoration: none !important;
+}
+
 .btn-start-first-choice {
   background-color: white;
   color: $brand-red;
@@ -100,6 +106,11 @@ a {
 .margin-top-30 {
   margin-top: 30px;
 }
+
+.margin-30 {
+  margin: 30px;
+}
+
 .inner{
   max-width: 1000px;
 

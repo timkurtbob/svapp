@@ -1,8 +1,13 @@
 <%= render 'components/navbar_user_show', user: @user %>
-<div class="profile-box">
-  <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'amelie.png' %>);">
-  </div>
-  <div>
-    <h2 class="red-font bold-font margin-top-30"><%= @user.first_name %> <%= @user.second_name %> |</h2>
+<div class="contatiner">
+  <div class="profile-box">
+    <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'amelie.png' %>);">
+    </div>
+    <h2 class="red-font bold-font margin-top-30"><%= @user.first_name %> <%= @user.second_name %></h2>
+    <h4 class="red-font bold-font"><%= @user.role.capitalize %></h4>
+    <div class="margin-30">
+      <p><strong>Email:</strong> <%= @user.email %></p>
+      <p><strong>Telefon:</strong> <%= @user.phone %></p>
+    </div>
   </div>
 </div>
