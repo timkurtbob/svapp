@@ -8,11 +8,16 @@
 
 .landing-description {
   h1, h2 {
-
   text-align: center;
   color: white;
   margin: 24px;
   }
+}
+
+#edit-title {
+  text-align: center;
+  color: white;
+  padding: 24px;
 }
 
 .logo-container{
@@ -27,6 +32,8 @@
   margin-top: 100px;
 }
 
+#user_current_password,
+#user_phone,
 #user_email,
 #user_password,
 #user_first_name,
