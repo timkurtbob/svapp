@@ -8,7 +8,7 @@ class Users::PendingsController < ApplicationController
 
   def update
     @pending_user = User.find(params[:id])
-    @pending_user.approved = pending_user_params
+    @pending_user.approved = true
     authorize([:pending, @pending_user])
     if @pending_user.save
       redirect_to users_pendings_path
@@ -17,11 +17,5 @@ class Users::PendingsController < ApplicationController
       redirect_to users_pendings_path
       flash[:alert] =  "Something went wrong..."
     end
-  end
-
-  private
-
-    def pending_user_params
-    params.require(:user).permit(:approved)
   end
 end

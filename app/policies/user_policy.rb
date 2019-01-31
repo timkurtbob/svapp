@@ -10,8 +10,8 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
-  def index?
-    user.admin? || user.super_admin?
+def index?
+   user.mitgelied? || user.admin? || user.super_admin?
   end
 
   def show?
