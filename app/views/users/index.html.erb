@@ -3,19 +3,17 @@
   <% @users.each do |user| %>
       <div class="author-infos big list-item justify-content-between">
     <%= link_to user_path(user) do  %>
-        <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'amelie.png' %>);">
-        </div>
-        <div>
-          <h3 class="red-font bold-font"><%= user.first_name %> <%= user.second_name %> </h3>
-        </div>
-      <% end %>
+        <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'amelie.png' %>);"></div>
+        <h3 class="red-font bold-font"><%= user.first_name %> <%= user.second_name %></h3>
+    <% end %>
         <div class="edit-user mr-5">
             <%= render 'components/edit_user_modal', user: user %>
         </div>
-        <div id= 'clicky-button' data-toggle="modal" data-target=<%= "#edit-user-model-#{user.id}"%>>
-          Update Role <i class="fas fa-edit"></i>
-        </div>
+        <% if current_user.admin? || current_user.super_admin? %>
+          <div id= 'clicky-button' data-toggle="modal" data-target=<%= "#edit-user-model-#{user.id}"%> ><%= user.role.capitalize %>
+            <i class="fas fa-pen"></i>
+          </div>
+        <% end %>
       </div>
-
   <% end %>
 </div>

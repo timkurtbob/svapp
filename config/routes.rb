@@ -20,5 +20,5 @@ Rails.application.routes.draw do
   post '/entries/:id/comments', to: 'entries#add_comment', as: 'add_comment'
   get 'entries/:id/bookmark', to: 'entries#bookmark', as: 'bookmark'
 
-  # get 'bookmarks', to: 'entries#my_bookmarks', as: 'my_bookmarks'
+  get 'bookmarks', to: 'entries#my_bookmarks', as: 'my_bookmarks'
 end
