@@ -3,19 +3,16 @@ class EntriesController < ApplicationController
 
 
   def index
-    @entries = policy_scope(Entry)
     case params[:query]
     when "Neuigkeiten"
-      @entries.order(created_at: :DESC)
+     @entries = scoped_entry.order(created_at: :DESC)
     when "Nächste"
-      @entries.order(created_at: :DESC)
+      @entries = scoped_entry.where("date >= ?", DateTime.now)
     when "Letzte"
-      @entries.order(created_at: :ASC)
+      @entries = scoped_entry.where("date <= ?", DateTime.now)
     else
-      @entries
+      @entries = scoped_entry
     end
-
-    @entries
     @entry = Entry.new
   end
 
@@ -93,6 +90,12 @@ class EntriesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  private
+
+  def scoped_entry
+    policy_scope(Entry)
   end
 
   def comment_params
