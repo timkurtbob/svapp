@@ -3,7 +3,19 @@ class EntriesController < ApplicationController
 
 
   def index
-    @entries = policy_scope(Entry).reject(&:deactivated)
+    @entries = policy_scope(Entry)
+    case params[:query]
+    when "Neuigkeiten"
+      @entries.order(created_at: :DESC)
+    when "Nächste"
+      @entries.order(created_at: :DESC)
+    when "Letzte"
+      @entries.order(created_at: :ASC)
+    else
+      @entries
+    end
+
+    @entries
     @entry = Entry.new
   end
 
