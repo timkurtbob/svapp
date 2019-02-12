@@ -1,8 +1,8 @@
 function toggleBee() {
   // toggling the icon
-  html = '<%= j render "components/bee", comment: @comment %>'
+  html = '<%= j render "components/bee", comment: @comment %>';
   const beeContainer = document.getElementById('<%="comment_#{@comment.id}"%>');
-  beeContainer.innerHTML = html
+  beeContainer.innerHTML = html;
 }
 
-toggleBee()
+toggleBee();

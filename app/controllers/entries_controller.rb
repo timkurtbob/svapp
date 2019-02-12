@@ -3,7 +3,16 @@ class EntriesController < ApplicationController
 
 
   def index
-    @entries = policy_scope(Entry).reject(&:deactivated)
+    case params[:query]
+    when "Neuigkeiten"
+     @entries = scoped_entry.order(created_at: :DESC)
+    when "Nächste"
+      @entries = scoped_entry.where("date >= ?", DateTime.now)
+    when "Letzte"
+      @entries = scoped_entry.where("date <= ?", DateTime.now)
+    else
+      @entries = scoped_entry
+    end
     @entry = Entry.new
   end
 
@@ -81,6 +90,12 @@ class EntriesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  private
+
+  def scoped_entry
+    policy_scope(Entry)
   end
 
   def comment_params

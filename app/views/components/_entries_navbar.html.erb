@@ -7,9 +7,14 @@
       <div class="dropdown">
         <i class="fas fa-sort-amount-down navbar-wagon-item" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Neuigkeiten zuerst</a></li>
-          <li><a href="#">Nächste Termine</a></li>
-          <li><a href="#">Letzte Termine</a></li>
+          <li><%= link_to "Neuigkeiten zuerst", entries_path(query: "Neuigkeiten"), id: "entries_filter_last", method: :get %>
+          </li>
+          <li>
+            <%= link_to "Nächste Termine", entries_path(query: "Nächste"), id: "entries_filter_last", method: :get %>
+          </li>
+          <li>
+            <%= link_to "Letzte Termine", entries_path(query: "Letzte"), id: "entries_filter_last", method: :get %>
+          </li>
         </ul>
       </div>
     </div>
