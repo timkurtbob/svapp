@@ -8,12 +8,12 @@
     </div>
     <div>
       <h3 class="red-font bold-font"><%= @author.first_name %> <%= @author.second_name %> |
-      <h3><%= @entry.created_at.strftime("%Y-%m-%d") %> - <%= @entry.created_at.strftime('%H:%M') %></h3>
+      <h3><%= @entry.created_at.strftime("%d.%m.%Y") %> um <%= @entry.created_at.strftime('%H:%M') %></h3>
     </div>
   </div>
   <div class="entry-body">
     <% if @entry.date %>
-      <h3 class="small-top-bottom-margin semi-bold-font"><%= t @entry.date.strftime('%A') %>, <%= @entry.date.strftime("%d.%m.%Y") %>
+      <h3 class="small-top-bottom-margin semi-bold-font"> <%= @entry.date.strftime("%d.%m.%Y") %>
         <% if @entry.time %>
             um <%= @entry.time.strftime('%H:%M')%> Uhr
         <% end %>
@@ -25,7 +25,7 @@
     <h2 class="semi-bold-font small-top-bottom-margin"><%= @entry.title %></h2>
     <p><%= @entry.description %></p>
     <% if @entry.date %>
-      <p class="small-top-bottom-margin"><span class="bold-font">Wann: </span><%= t @entry.date.strftime('%A') %>, <%= @entry.date.strftime("%d.%m.%Y") %>
+      <p class="small-top-bottom-margin"><span class="bold-font">Wann: </span> <%= @entry.date.strftime("%d.%m.%Y") %>
         <% if @entry.time %>
           um <%= @entry.time.strftime('%H:%M')%> Uhr
         <% end %>

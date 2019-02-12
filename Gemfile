@@ -18,6 +18,7 @@ gem 'webpacker'
 gem 'cloudinary', '~> 1.9.1'
 gem "pundit"
 gem 'activeadmin'
+gem 'rails-i18n'
 
 
 group :development do
