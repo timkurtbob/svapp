@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-  after_action :verify_authorized, except: :index
+  after_action :verify_authorized, except: [:my_bookmarks, :index]
 
 
   def index
