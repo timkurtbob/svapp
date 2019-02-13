@@ -4,7 +4,7 @@
       <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'amelie.png' %>);"></div>
       <div class="author-text">
         <h4 class="red-font semi-bold-font"><%= entry.user.first_name %> <%= entry.user.second_name %></h4>
-        <h4><%= entry.created_at.strftime("%Y-%m-%d")%> - <%= entry.created_at.strftime('%H:%M') %></h4>
+        <h4><%= entry.created_at.strftime("%d.%m.%Y") %> um <%= entry.created_at.strftime('%H:%M') %></h4>
       </div>
     </div>
     <div id='<%="entry_#{entry.id.to_s}"%>'>
@@ -22,7 +22,7 @@
         <div>
 
         <% if entry.time %>
-          <h4 class="red-font semi-bold-font" id="entry-card-date"><%= entry.date.strftime('%A') %>, <%= entry.date.strftime("%d.%m.%Y") %> um <%= entry.time.strftime('%H:%M')%> Uhr</h4>
+          <h4 class="red-font semi-bold-font" id="entry-card-date"><%= entry.date.strftime("%d.%m.%Y") %> um <%= entry.time.strftime('%H:%M')%> Uhr</h4>
         <% end %>
         <% if entry.location %>
           <h4 class="red-font semi-bold-font"><%= entry.location %></h4>
