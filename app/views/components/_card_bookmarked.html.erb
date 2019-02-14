@@ -4,7 +4,7 @@
       <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'amelie.png' %>);"></div>
       <div class="author-text">
         <h4 class="red-font semi-bold-font"><%= bookmark.entry.user.first_name %> <%= bookmark.entry.user.second_name %></h4>
-        <h4><%= bookmark.entry.created_at.strftime("%Y-%m-%d")%> - <%= bookmark.entry.created_at.strftime('%H:%M') %></h4>
+        <h4><%= bookmark.entry.created_at.strftime("%d-%m-%Y")%> - <%= bookmark.entry.created_at.strftime('%H:%M') %></h4>
       </div>
     </div>
     <div id='<%="bookmark.entry_#{bookmark.entry.id.to_s}"%>'>
