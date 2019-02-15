@@ -7,7 +7,7 @@
         <h4><%= bookmark.entry.created_at.strftime("%d-%m-%Y")%> - <%= bookmark.entry.created_at.strftime('%H:%M') %></h4>
       </div>
     </div>
-    <div id='<%="bookmark.entry_#{bookmark.entry.id.to_s}"%>'>
+    <div id='<%="entry_#{bookmark.entry.id.to_s}"%>'>
       <%= render 'components/bookmark', entry: bookmark.entry %>
     </div>
   </div>

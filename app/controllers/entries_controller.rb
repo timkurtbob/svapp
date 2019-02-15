@@ -56,6 +56,7 @@ class EntriesController < ApplicationController
 
   def my_bookmarks
     @my_bookmarks = current_user.bookmarks
+    @entries = Entry.all
   end
 
   def bee
