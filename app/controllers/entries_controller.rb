@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-  after_action :verify_authorized, except: :index
+  after_action :verify_authorized, except: [:my_bookmarks, :index]
 
 
   def index
@@ -56,6 +56,7 @@ class EntriesController < ApplicationController
 
   def my_bookmarks
     @my_bookmarks = current_user.bookmarks
+    @entries = Entry.all
   end
 
   def bee

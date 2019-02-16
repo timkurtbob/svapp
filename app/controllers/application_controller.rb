@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
 
   rescue_from Pundit::NotAuthorizedError do
-    redirect_to root_url, alert: 'Du hast nicht die Rechte zu dieser Seite.'
+    redirect_to root_url, alert: "Computer sagt 'nein'."
   end
 
   private
