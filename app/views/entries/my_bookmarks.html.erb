@@ -1,7 +1,7 @@
 <%= render 'components/entries_navbar' %>
 <div class="container">
   <% if @my_bookmarks.length == 0 %>
-    <h2 style="text-align: center;">Du hast noch keine Lesezeichen hinzugefügt</h2>
+    <h2 style="text-align: center;">Du hast keine Lesezeichen</h2>
   <% else %>
     <% @my_bookmarks.each do |bookmark| %>
       <%= render 'components/card_bookmarked', bookmark: bookmark %>
