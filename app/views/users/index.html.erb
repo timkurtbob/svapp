@@ -1,19 +1,19 @@
 <%= render 'components/navbar_burger_only' %>
 <div class="container margin-top-30 users-list">
   <% @users.each do |user| %>
+    <% if user.school == current_user.school %>
       <div class="author-infos big list-item justify-content-between">
-    <%= link_to user_path(user) do  %>
-        <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'profile.png' %>);"></div>
-        <h3 class="red-font bold-font"><%= user.first_name %> <%= user.second_name %></h3>
-    <% end %>
+        <%= link_to user_path(user) do  %>
+          <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'profile.png' %>);"></div>
+          <h3 class="red-font bold-font"><%= user.first_name %> <%= user.second_name %></h3>
+        <% end %>
         <div class="edit-user mr-5">
-            <%= render 'components/edit_user_modal', user: user %>
+          <%= render 'components/edit_user_modal', user: user %>
         </div>
         <% if current_user.admin? || current_user.super_admin? %>
-          <div id= 'clicky-button' data-toggle="modal" data-target=<%= "#edit-user-model-#{user.id}"%> ><%= user.role.capitalize %>
-            <i class="fas fa-pen"></i>
-          </div>
+          <div id= 'clicky-button' data-toggle="modal" data-target=<%= "#edit-user-model-#{user.id}"%> ><%= user.role.capitalize %><i class="fas fa-pen"></i></div>
         <% end %>
       </div>
+    <% end %>
   <% end %>
 </div>
