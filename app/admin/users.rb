@@ -6,6 +6,8 @@ ActiveAdmin.register User do
       f.input :first_name
       f.input :second_name
       f.input :email
+      f.input :phone
+      f.input :school
     end
     f.inputs "Admin Level" do
       f.input :role, include_hidden: false, include_blank: false
@@ -19,6 +21,7 @@ ActiveAdmin.register User do
     column :first_name
     column :second_name
     column :email
+    column :phone
     column :role
     column :school
     column :created_at
