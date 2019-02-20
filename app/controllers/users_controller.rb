@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def index
     @users = policy_scope(User)
     unless current_user.admin? || current_user.super_admin?
-      redirect_to entries_path, alert: 'Du hast nicht die Rechte zu dieser Seite.'
+      redirect_to entries_path, alert: 'Fehlende Admin-Rechte.'
     end
   end
 
@@ -21,13 +21,13 @@ class UsersController < ApplicationController
           redirect_to users_path, alert: "You don't have this permission."
       else
         if @user.save
-          redirect_to user_path(@user), notice: "Sucessfully changed #{@user.first_name} to #{@user.role}."
+          redirect_to user_path(@user), notice: "Erfolgreich geändert: #{@user.first_name} ist #{@user.role}."
         else
-          redirect_to user_path(@user), alert: "Could not update role."
+          redirect_to user_path(@user), alert: "Wurde nicht geändert."
         end
       end
     else
-      redirect_to user_path(@user), alert: "You don't have permission to update the role."
+      redirect_to user_path(@user), alert: "Fehlende Admin-Rechte."
     end
   end
 
