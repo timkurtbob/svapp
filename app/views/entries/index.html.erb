@@ -1,7 +1,9 @@
 <%= render 'components/entries_navbar' %>
 <div class="container">
   <% @entries.each do |entry| %>
-    <%= render 'components/card', entry: entry %>
+    <% if entry.user.school_id == current_user.school_id %>
+      <%= render 'components/card', entry: entry %>
+    <% end %>
   <% end %>
 </div>
 

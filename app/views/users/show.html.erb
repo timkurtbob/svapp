@@ -4,6 +4,7 @@
     <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'profile.png' %>);">
     </div>
     <h2 class="red-font bold-font margin-top-30"><%= @user.first_name %> <%= @user.second_name %></h2>
+    <h4 class="red-font bold-font"><%= @user.school.name.capitalize %></h4>
     <h4 class="red-font bold-font"><%= @user.role.capitalize %></h4>
     <div class="margin-30">
       <p><strong>Email:</strong> <%= @user.email %></p>
