@@ -16,10 +16,12 @@ ActiveAdmin.register User do
   index do
     selectable_column
     column :id
+    column :first_name
+    column :second_name
     column :email
-    column :name
-    column :created_at
     column :role
+    column :school
+    column :created_at
     actions
   end
 
