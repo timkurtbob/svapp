@@ -19,8 +19,6 @@ gem 'cloudinary', '~> 1.9.1'
 gem "pundit"
 gem 'activeadmin'
 gem 'rails-i18n'
-gem 'arctic_admin'
-
 
 
 group :development do
