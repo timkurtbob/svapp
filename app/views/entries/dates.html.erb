@@ -1,7 +1,8 @@
+<%= render 'components/navbar_burger_only' %>
 <div class="container">
   <h1>Kalender</h1>
 
-  <h2>Monatsansicht</h2>
+</div>
   <%= month_calendar do |date| %>
     <%= date.day %>
     <br>
@@ -12,4 +13,3 @@
       <%= link_to s.title, entry_path(s.id) %>
     <% end %>
   <% end %>
-</div>
