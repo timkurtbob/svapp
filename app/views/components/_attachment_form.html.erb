@@ -1,0 +1,16 @@
+<%= simple_form_for( [@entry, @attachment], remote: true, html: { autocomplete: 'off', wrap: 'hard'}) do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :user,
+                as: :hidden,
+                input_html: {value: "#{current_user.id}"},
+                label: false %>
+    <%= f.input :entry,
+                as: :hidden,
+                input_html: {value: "#{@entry.id}", class: "hidden"},
+                label: false %>
+    <%= f.input :name,
+                as: :hidden,
+                :label => false %>
+    <%= f.input :name_cache, as: :hidden %>
+    <%= f.submit "Anhänge hinzufügen" %>
+  <% end %>
