@@ -16,9 +16,10 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :update]
 
   get 'comments/:id/bee', to: 'entries#bee', as: 'bee'
-
   post '/entries/:id/comments', to: 'entries#add_comment', as: 'add_comment'
+
   get 'entries/:id/bookmark', to: 'entries#bookmark', as: 'bookmark'
 
   get 'bookmarks', to: 'entries#my_bookmarks', as: 'my_bookmarks'
+  get 'dates', to: 'entries#dates', as: 'dates'
 end
