@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/timkurtbob/simple_calendar
+  revision: 6171cf8f65c2ae03c295366e8071614bac1d0b1d
+  specs:
+    simple_calendar (2.3.0)
+      rails (>= 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -232,8 +239,6 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    simple_calendar (2.3.0)
-      rails (>= 3.0)
     simple_form (4.1.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -296,7 +301,7 @@ DEPENDENCIES
   rails-i18n
   redis
   sassc-rails
-  simple_calendar (~> 2.0)
+  simple_calendar!
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
