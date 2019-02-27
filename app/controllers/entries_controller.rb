@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-  after_action :verify_authorized, except: [:my_bookmarks, :index]
+  after_action :verify_authorized, except: [:my_bookmarks, :index, :dates]
 
 
   def index
@@ -90,6 +90,11 @@ class EntriesController < ApplicationController
       end
     else
       render 'new'
+    end
+
+    def dates
+      @entries = Entry.all
+      authorize @entries
     end
   end
 

@@ -19,6 +19,8 @@ module Svapp
     config.i18n.default_locale = :de
     config.time_zone = "Europe/Berlin"
     config.assets.initialize_on_precompile = false
+    config.beginning_of_week = :monday
+
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
