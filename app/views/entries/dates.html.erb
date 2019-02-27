@@ -1,0 +1,14 @@
+<%= render 'components/navbar_burger_only' %>
+<div class="container">
+
+  <%= month_calendar do |date| %>
+    <%= date.day %>
+    <br>
+    <% x = date %>
+    <% @entries = Entry.all %>
+
+    <% @entries.select{ |e| e.date.to_date == x}.each do |s| %>
+      <%= link_to s.title, entry_path(s.id) %>
+    <% end %>
+  <% end %>
+</div>
