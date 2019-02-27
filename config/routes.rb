@@ -8,7 +8,10 @@ Rails.application.routes.draw do
     resources :archives, only: [:index, :update]
   end
 
- resources :entries, only: [ :index, :show, :create, :update]
+ resources :entries, only: [ :index, :show, :create, :update] do
+    resources :attachments, only: [:create]
+
+ end
 
   namespace :users do
     resources :pendings, only: [:index, :update]
@@ -18,7 +21,6 @@ Rails.application.routes.draw do
 
   get 'comments/:id/bee', to: 'entries#bee', as: 'bee'
 
-  post '/entries/:id/attachments', to: 'attachments#create', as: 'add_attachment'
 
   post '/entries/:id/comments', to: 'entries#add_comment', as: 'add_comment'
   get 'entries/:id/bookmark', to: 'entries#bookmark', as: 'bookmark'

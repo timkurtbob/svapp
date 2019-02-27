@@ -22,6 +22,7 @@ class EntriesController < ApplicationController
     @author = @entry.user
     @comments = @entry.comments.reverse
     @comment = Comment.new
+    @attachment = Attachment.new
   end
 
   def create

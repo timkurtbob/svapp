@@ -1,4 +1,4 @@
-<%= simple_form_for( [@entry, @attachment], remote: true, html: { autocomplete: 'off', wrap: 'hard'}) do |f| %>
+<%= simple_form_for( ([entry, attachment]), method: :post, remote: true, html: { autocomplete: 'off', wrap: 'hard'}) do |f| %>
     <%= f.error_notification %>
     <%= f.input :user,
                 as: :hidden,
