@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/timkurtbob/simple_calendar
-  revision: 6171cf8f65c2ae03c295366e8071614bac1d0b1d
+  revision: 6055d296c581883e5ee9ba50be75f41cb32af273
   specs:
     simple_calendar (2.3.0)
       rails (>= 3.0)
