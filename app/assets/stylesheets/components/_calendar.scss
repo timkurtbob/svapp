@@ -29,6 +29,18 @@
     font-size: 12px;
   }
 
+  .calendar-heading {
+    text-align: center;
+    a {
+      font-size: 16px;
+    }
+    .calendar-title {
+      margin: 10px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+
   .day {
     background: white;
     height: 12vh;
