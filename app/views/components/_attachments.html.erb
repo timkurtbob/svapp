@@ -1,4 +1,5 @@
-<%= simple_form_for( ([entry, attachment]), method: :post, remote: true, html: { autocomplete: 'off', wrap: 'hard'}) do |f| %>
+<div class="attachment-form">
+  <%= simple_form_for( ([entry, attachment]), method: :post, remote: true, html: { autocomplete: 'off', wrap: 'hard'}) do |f| %>
     <%= f.error_notification %>
     <%= f.input :user,
                 as: :hidden,
@@ -13,3 +14,10 @@
     <%= f.input :name_cache, as: :hidden %>
     <%= f.submit "Anhang hochladen", class: "hidden button-submit" %>
   <% end %>
+</div>
+
+<i class="fas fa-plus-circle fa-3x" id="add-attach-btn"></i>
+
+<div class="attachment-preview">
+
+</div>
