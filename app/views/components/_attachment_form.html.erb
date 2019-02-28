@@ -9,8 +9,7 @@
                 input_html: {value: "#{@entry.id}", class: "hidden"},
                 label: false %>
     <%= f.input :name,
-                label: false,
-                label_html: {class: 'btn-second-choice'} %>
+                label: false %>
     <%= f.input :name_cache, as: :hidden %>
-    <%= f.submit "Anhang hochladen" %>
+    <%= f.submit "Anhang hochladen", class: "hidden button-submit" %>
   <% end %>
