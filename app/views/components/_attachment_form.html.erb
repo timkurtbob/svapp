@@ -9,8 +9,9 @@
                 input_html: {value: "#{@entry.id}", class: "hidden"},
                 label: false %>
     <%= f.input :name,
-                as: :hidden,
-                :label => false %>
+                label: false,
+                label_html: {class: 'btn-second-choice'},
+                hint: 'jpg, png, pdf, doc, docx, xls, xlsx' %>
     <%= f.input :name_cache, as: :hidden %>
-    <%= f.submit "Anhänge hinzufügen" %>
+    <%= f.submit "Anhang hochladen" %>
   <% end %>
