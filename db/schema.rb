@@ -31,11 +31,12 @@ ActiveRecord::Schema.define(version: 2019_01_23_172933) do
 
   create_table "attachments", force: :cascade do |t|
     t.string "name"
-    t.string "pic"
     t.bigint "entry_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["entry_id"], name: "index_attachments_on_entry_id"
+    t.index ["user_id"], name: "index_attachments_on_user_id"
   end
 
   create_table "bees", force: :cascade do |t|
@@ -105,6 +106,7 @@ ActiveRecord::Schema.define(version: 2019_01_23_172933) do
   end
 
   add_foreign_key "attachments", "entries"
+  add_foreign_key "attachments", "users"
   add_foreign_key "bees", "comments"
   add_foreign_key "bees", "users"
   add_foreign_key "bookmarks", "entries"

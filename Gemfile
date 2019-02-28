@@ -19,8 +19,8 @@ gem 'cloudinary', '~> 1.9.1'
 gem "pundit"
 gem 'activeadmin'
 gem 'rails-i18n'
+gem 'carrierwave', '~> 1.2'
 gem 'simple_calendar', git: 'https://github.com/timkurtbob/simple_calendar'
-
 
 group :development do
   gem 'web-console', '>= 3.3.0'

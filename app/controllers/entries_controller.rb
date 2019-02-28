@@ -22,6 +22,7 @@ class EntriesController < ApplicationController
     @author = @entry.user
     @comments = @entry.comments.reverse
     @comment = Comment.new
+    @attachment = Attachment.new
   end
 
   def create
@@ -75,6 +76,15 @@ class EntriesController < ApplicationController
     end
   end
 
+  # def add_attachment
+  #   @entry = Entry.find(params[:id])
+  #   authorize @entry
+  #   @attachment = Attachment.new(attachment_params)
+  #   @attachment.entry = @entry
+  #   @attachment.user = current_user
+  #   @attachment.save
+  # end
+
   def add_comment
     @entry = Entry.find(params[:id])
     authorize @entry
@@ -107,6 +117,10 @@ class EntriesController < ApplicationController
   def comment_params
     params.require(:comment).permit(:text)
   end
+
+  # def attachment_params
+  #   params.require(:attachment).permit(:name)
+  # end
 
   def entry_params
     params.require(:entry).permit(:title, :description, :time, :date, :location)
