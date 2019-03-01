@@ -4,12 +4,6 @@ const attach_form = document.getElementById('new_attachment')             // for
 const submit_button = document.querySelector(".button-submit")            // submit button
 
 
-console.log(submit_button)
-console.log(attach_form)
-console.log(form_choose_file_btn)
-console.log(add_button)
-
-
 function clickSubmitAttachButton() {
   submit_button.click();
 }

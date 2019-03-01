@@ -3,21 +3,6 @@ const buttons = document.getElementById('new-comment-buttons')
 const cancelBtn = document.getElementById('cancel-btn');
 const submitBtn = document.getElementById('submit-btn');
 
-//test for attachments
-const add_button = document.getElementById('add-attach-btn')              // visible button
-const form_choose_file_btn = document.getElementById("attachment_name")   // choose file button
-const attach_form = document.getElementById('new_attachment')             // form to be filled with file name, user id, entry id...
-const submit_button = document.querySelector(".button-submit")
-
-console.log(submit_button)
-console.log(attach_form)
-console.log(form_choose_file_btn)
-console.log(add_button)
-
-console.log(inputField)
-console.log(buttons)
-console.log(cancelBtn)
-console.log(submitBtn)
 
 function addEventListenerforNewComment() {
   inputField.addEventListener('focusin', showButtons);
@@ -57,27 +42,3 @@ const toggleSubmitDisable = () => {
 }
 
 addEventListenerforNewComment()
-
-
-
-
-function clickSubmitAttachButton() {
-  submit_button.click();
-}
-
-function addEventListenerToAttachForm() {
-  if (attach_form) {
-    attach_form.addEventListener('change', clickSubmitAttachButton)
-  }
-}
-
-function clickUploadAttachButton() {
-  form_choose_file_btn.click();
-}
-
-function addEventListenerToAddAttachBtn() {
-  add_button.addEventListener('click', clickUploadAttachButton)
-}
-
-addEventListenerToAttachForm();
-addEventListenerToAddAttachBtn();
