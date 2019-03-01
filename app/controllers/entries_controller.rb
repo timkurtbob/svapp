@@ -23,6 +23,7 @@ class EntriesController < ApplicationController
     @comments = @entry.comments.reverse
     @comment = Comment.new
     @attachment = Attachment.new
+    @attachments = entry_attachments.reverse
   end
 
   def create
@@ -111,5 +112,11 @@ class EntriesController < ApplicationController
 
   def entry_params
     params.require(:entry).permit(:title, :description, :time, :date, :location)
+  end
+
+  def entry_attachments
+    entry = Entry.find(params[:id])
+    attachments_array = entry.attachments
+    return attachments_array
   end
 end
