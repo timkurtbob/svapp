@@ -3,6 +3,7 @@ const buttons = document.getElementById('new-comment-buttons')
 const cancelBtn = document.getElementById('cancel-btn');
 const submitBtn = document.getElementById('submit-btn');
 
+
 function addEventListenerforNewComment() {
   inputField.addEventListener('focusin', showButtons);
   inputField.addEventListener('focusout', hideButtonsIfEmpty);

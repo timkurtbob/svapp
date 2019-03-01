@@ -1,0 +1,7 @@
+<div class="attachments">
+  <% @attachments.each do |a| %>
+    <div class="attachment-thumbnail">
+      <%= cl_image_tag(a.name, :width=>100, :height=>100, :gravity=>"east", :crop=>"fill") %>
+    </div>
+  <% end %>
+</div>

@@ -36,7 +36,8 @@
     <% end %>
   </div>
 
-  <%= render 'components/attachment_form', entry: @entry, attachment: @attachment %>
+  <%= render 'components/attachment_upload_form', entry: @entry, attachment: @attachment %>
+  <%= render 'components/attachments', attachments: @attachments %>
 
   <div class="comments">
     <h4 class="bold-font">Kommentare:</h4>
