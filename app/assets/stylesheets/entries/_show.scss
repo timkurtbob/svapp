@@ -1,5 +1,5 @@
 .entry-body {
-  margin: 30px 10px 0;
+  margin: 30px 10px 0px;
 }
 .text-center{
   text-align: center;
@@ -74,4 +74,23 @@
   &> * {
   margin: 10px 0 20px;
   }
+}
+
+.attach-button {
+  color: $brand-red;
+  text-align: right;
+}
+
+.attach-link {
+  text-align: center;
+  float: left;
+  margin-bottom: 10px;
+  p {
+    color: $brand-red;
+    font-weight: bold;
+  }
+}
+
+.stop-attach-float {
+  clear: both;
 }

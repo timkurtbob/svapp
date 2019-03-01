@@ -11,6 +11,7 @@
       <h3><%= @entry.created_at.strftime("%d.%m.%Y") %> um <%= @entry.created_at.strftime('%H:%M') %></h3>
     </div>
   </div>
+
   <div class="entry-body">
     <% if @entry.date %>
       <h3 class="small-top-bottom-margin semi-bold-font"> <%= @entry.date.strftime("%d.%m.%Y") %>
@@ -38,30 +39,5 @@
 
   <%= render 'components/attachment_upload_form', entry: @entry, attachment: @attachment %>
   <%= render 'components/attachments', attachments: @attachments %>
-
-  <div class="comments">
-    <h4 class="bold-font">Kommentare:</h4>
-    <div class="new-comment-area">
-      <div class="author-infos small">
-        <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'profile.png' %>);">
-        </div>
-      </div>
-      <%= simple_form_for(@comment, url: add_comment_path, html: { autocomplete: 'off', wrap: 'hard'}, remote: true) do |f| %>
-        <%= f.error_notification %>
-
-        <div id="comment-input">
-          <%= f.input :text, as: :text, required: true, placeholder: 'Schreibe einen Kommentar...', label: false %>
-        </div>
-
-        <div class="form-actions d-none" id="new-comment-buttons">
-          <%= f.button :button, 'Abbrechen', type: :reset, class: 'btn-second-choice', id: 'cancel-btn' %>
-          <%= f.button :submit, "Kommentieren", disabled: true, class: 'btn-first-choice', id: 'submit-btn' %>
-        </div>
-      <% end %>
-    </div>
-    <% @comments.each do |comment| %>
-      <%= render 'components/comment', comment: comment %>
-    <% end %>
-  </div>
+  <%= render 'components/comments', comment: @comment %>
 </div>
-<%= javascript_pack_tag 'addComment' %>
