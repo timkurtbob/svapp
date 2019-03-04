@@ -1,14 +1,44 @@
-<div class="attachments">
-  <% @attachments.each do |a| %>
-    <div class="attach-link">
-      <%= link_to "#{a.name}", target: :_blank do %>
-        <p># <%= a.id %></p>
-        <%= cl_image_tag(a.name, :width=>160, :height=>160, :gravity=>"east", :crop=>"fill") %>
+<!-- file section -->
+<div class="attach-header">
+  <h2>Dokumente</h2>
+  <div class="attach-button">
+    <i class="fas fa-plus"></i>
+    <i class="fas fa-file-alt fa-2x" id="add-document-btn"></i>
+  </div>
+</div>
+
+<div class="document-links">
+  <% documents = @attachments.select{ |a| a.file_type == 'document'} %>
+    <% documents.each do |d| %>
+    <%= link_to "#{d.name}", target: :_blank do %>
+      <h3>#<%= d.id %> - <%= d.file_name %></h3>
+    <% end %>
+  <% end %>
+  <div class="stop-attach-float">
+  </div>
+</div>
+
+
+<!-- image section -->
+<div class="attach-header">
+  <h2>Bilder</h2>
+  <div class="attach-button">
+    <i class="fas fa-plus"></i>
+    <i class="fas fa-images fa-2x" id="add-image-btn"></i>
+  </div>
+</div>
+
+
+  <% images = @attachments.select{ |a| a.file_type == 'image'} %>
+    <% images.each do |i| %>
+    <div class="image-links">
+      <%= link_to "#{i.name}", target: :_blank do %>
+        <p>#<%= i.id %></p>
+        <%= cl_image_tag(i.name, width: 160, height: 160, crop: "fill") %>
         <br>
-        <p><%= a.file_name %></p>
+        <p> <%= i.file_name %></p>
       <% end %>
     </div>
   <% end %>
   <div class="stop-attach-float">
   </div>
-</div>

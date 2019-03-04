@@ -1,5 +1,5 @@
-const add_document_button = document.getElementById('add-document-btn')    // visible file button
-const add_image_button = document.getElementById('add-image-btn')  // visible image button
+const add_document_button = document.getElementById('add-document-btn')   // visible file button
+const add_image_button = document.getElementById('add-image-btn')         // visible image button
 const form_choose_file_btn = document.getElementById("attachment_name")   // choose file button
 const file_type_field = document.getElementById("attachment_file_type")   // "document" or "image"
 const attach_form = document.getElementById('new_attachment')             // form to be filled with file name, user id, entry id...
@@ -24,25 +24,21 @@ function clickUploadAttachButton() {
 //setting file type
 function setFileTypeToDocument(){
   file_type_field.value="document"
-  clickUploadAttachButton
+  clickUploadAttachButton()
 }
-
 function setFileTypeToImage(){
   file_type_field.value="image"
-  clickUploadAttachButton
+  clickUploadAttachButton()
 }
 
 function addEventListenerToAddDocumentBtn() {
-  add_document_button.addEventListener('click', clickUploadAttachButton)
+  add_document_button.addEventListener('click', setFileTypeToDocument)
 }
 
 function addEventListenerToAddImageBtn() {
-  file_type_field.value="image"
-  add_image_button.addEventListener('click'), click
+  add_image_button.addEventListener('click', setFileTypeToImage)
 }
 
-
-
 addEventListenerToAttachForm();
-addEventListenerToAddFileBtn();
+addEventListenerToAddDocumentBtn();
 addEventListenerToAddImageBtn();
