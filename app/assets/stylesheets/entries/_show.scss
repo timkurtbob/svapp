@@ -1,5 +1,5 @@
 .entry-body {
-  margin: 30px 10px 0;
+  margin: 30px 10px 0px;
 }
 .text-center{
   text-align: center;
@@ -74,4 +74,37 @@
   &> * {
   margin: 10px 0 20px;
   }
+}
+
+.attach-button {
+  color: $brand-red;
+  text-align: right;
+}
+
+.document-links {
+  h3 {
+    color: $brand-red;
+    font-weight: bold;
+  }
+}
+
+.image-links {
+  text-align: center;
+  float: left;
+  margin: 10px;
+  p {
+    color: $brand-red;
+    margin: 0;
+  }
+}
+
+.stop-attach-float {
+  clear: both;
+}
+
+.attach-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  margin-bottom: 8px;
 }

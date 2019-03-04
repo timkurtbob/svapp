@@ -1,17 +1,14 @@
 <div hidden class="attachment-form">
+  <%= time_stamp = Time.now.to_s %>
   <%= simple_form_for( ([entry, attachment]), method: :post, remote: true, html: { autocomplete: 'off', wrap: 'hard'}) do |f| %>
     <%= f.error_notification %>
     <%= f.input :user,
-                input_html: {value: "#{current_user.id}"},
-                label: false %>
+                input_html: {value: "#{current_user.id}"} %>
     <%= f.input :entry,
-                input_html: {value: "#{@entry.id}"},
-                label: false %>
-    <%= f.input :name,
-                label: false %>
-    <%= f.input :name_cache, as: :hidden %>
+                input_html: {value: "#{@entry.id}"} %>
+    <%= f.input :file_type %>
+    <%= f.input :name %>
+    <%= f.input :name_cache %>
     <%= f.submit "Submit", class: "submit-btn" %>
   <% end %>
 </div>
-
-<i class="fas fa-plus-circle fa-3x" id="add-attach-btn"></i>
