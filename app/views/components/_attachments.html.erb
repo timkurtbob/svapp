@@ -8,6 +8,7 @@
 </div>
 
 <div class="document-links">
+  <% @attachments.sort! %>
   <% documents = @attachments.select{ |a| a.file_type == 'document'} %>
     <% documents.each do |d| %>
     <%= link_to "#{d.name}", target: :_blank do %>
