@@ -2,9 +2,10 @@
   <% @attachments.each do |a| %>
     <div class="attach-link">
       <%= link_to "#{a.name}", target: :_blank do %>
-        <%= cl_image_tag(a.name, :width=>100, :height=>100, :gravity=>"east", :crop=>"fill") %>
-        <br>
         <p># <%= a.id %></p>
+        <%= cl_image_tag(a.name, :width=>160, :height=>160, :gravity=>"east", :crop=>"fill") %>
+        <br>
+        <p><%= a.file_name %></p>
       <% end %>
     </div>
   <% end %>
