@@ -8,9 +8,9 @@ Rails.application.routes.draw do
     resources :archives, only: [:index, :update]
   end
 
- resources :entries, only: [ :index, :show, :create, :update] do
+  resources :entries, only: [ :index, :show, :create, :update] do
     resources :attachments, only: [:create]
- end
+  end
 
   namespace :users do
     resources :pendings, only: [:index, :update]
