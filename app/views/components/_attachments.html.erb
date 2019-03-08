@@ -31,16 +31,18 @@
 </div>
 
 
-  <% images = @attachments.select{ |a| a.file_type == 'image'} %>
-    <% images.each do |i| %>
-    <div class="image-links">
-      <%= link_to "#{i.name}", target: :_blank do %>
-        <p>#<%= i.id %></p>
-        <%= cl_image_tag(i.name, width: 160, height: 160, crop: "fill") %>
-        <br>
-        <p> <%= i.file_name %></p>
-      <% end %>
-    </div>
-  <% end %>
-  <div class="stop-attach-float">
+<% images = @attachments.select{ |a| a.file_type == 'image'} %>
+  <% images.each do |i| %>
+  <div class="image-links">
+    <%= link_to "#{i.name}", target: :_blank do %>
+      <p>#<%= i.id %></p>
+      <%= cl_image_tag(i.name, width: 160, height: 160, crop: "fill") %>
+      <br>
+      <p> <%= i.file_name %></p>
+    <% end %>
   </div>
+<% end %>
+<div class="stop-attach-float">
+</div>
+
+<%= javascript_pack_tag 'attachmentUpload' %>
