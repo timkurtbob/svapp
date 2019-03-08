@@ -10,7 +10,6 @@ class AttachmentPolicy < ApplicationPolicy
     end
   end
 
-
   def create?
     record == user || user.admin? || user.super_admin?
   end

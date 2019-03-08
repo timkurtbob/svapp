@@ -34,6 +34,4 @@ class EntryPolicy < ApplicationPolicy
   def add_comment?
     user.mitglied? || user.admin? || user.super_admin?
   end
-
-
 end
