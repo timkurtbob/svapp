@@ -1,2 +1,13 @@
-<h1>Circles#index</h1>
-<p>Find me in app/views/circles/index.html.erb</p>
+<%= render 'components/navbar_burger_only' %>
+<div class="container">
+  <div class="circle-header">
+    <h2>Hier sind die bisher angelegten Kreise:</h2>
+  </div>
+  <div class="circle-list">
+    <% @circles.each do |c| %>
+      <div class="circle">
+        <h3><%= c.id %> - <%= c.name %></h3>
+      </div>
+    <% end %>
+  </div>
+</div>
