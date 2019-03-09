@@ -65,3 +65,9 @@ entry_four = Entry.create(
   date: Date.new(2019, 3, 21),
   user: user_one
   )
+
+puts 'creating circles'
+
+circle_one = Circle.create(
+  name: 'Allgemeines'
+  )

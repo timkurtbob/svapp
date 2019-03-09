@@ -1,0 +1,19 @@
+<%= render 'components/navbar_burger_only' %>
+<div class="container">
+  <div class="circle-header">
+    <h2>Hier sind die bisher angelegten Kreise:</h2>
+  </div>
+  <div class="circle-list">
+    <% @circles.each do |c| %>
+      <div class="circle">
+        <h3><%= c.id %> - <%= c.name %></h3>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="fixed-floating-button" id= 'clicky-button' data-toggle="modal" data-target="#circleModal">
+  <i class="fas fa-plus"></i>
+</div>
+
+<%= render 'components/circle_modal', circle: @circle %>
