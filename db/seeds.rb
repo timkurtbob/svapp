@@ -39,8 +39,11 @@ user_one = User.create(
 puts 'creating circles'
 
 circle_one = Circle.create(
-  name: 'Allgemeines'
+  name: 'App-Infos'
   )
+
+circle_two = Circle.create(
+  name: 'Allgemeines')
 
 puts 'creating entries'
 
