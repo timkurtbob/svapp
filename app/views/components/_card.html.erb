@@ -18,7 +18,7 @@
         <p><%= entry.description %></p>
       </div>
 
-      <div class="d-flex justify-content-between">
+      <div class="card-foot d-flex justify-content-between">
         <div class="card-foot-left">
           <% if entry.location %>
             <h4 class="red-font semi-bold-font"><%= entry.location %></h4>
@@ -29,7 +29,7 @@
         </div>
         <div class="card-foot-right">
           <% if entry.circle %>
-            <div class="row">
+            <div class="d-flex justify-content-between">
               <i class="far fa-circle"></i>
               <h4> <%= entry.circle.name %></h4>
             </div>

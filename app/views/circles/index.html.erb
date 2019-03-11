@@ -5,9 +5,12 @@
   </div>
   <div class="circle-list">
     <% @circles.each do |c| %>
-      <div class="circle">
-        <h3><%= c.id %> - <%= c.name %></h3>
-      </div>
+      <%= link_to c do  %>
+        <div class="row">
+          <i class="far fa-circle"></i>
+          <h3 class="semi-bold-font red-font"><%= c.name %></h3>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
