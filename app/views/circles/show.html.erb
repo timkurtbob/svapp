@@ -1,0 +1,10 @@
+<%= render 'components/navbar_burger_only' %>
+<div class="container">
+  <% if @entries.length == 0 %>
+    <h2 style="text-align: center;">Dieser Kreis hat keine Einträge</h2>
+  <% else %>
+    <% @entries.each do |entry| %>
+      <%= render 'components/card', entry: entry %>
+    <% end %>
+  <% end %>
+</div>

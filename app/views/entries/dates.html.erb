@@ -4,11 +4,9 @@
   <%= month_calendar do |date| %>
     <%= date.day %>
     <br>
-    <% x = date %>
-    <% @entries = Entry.all %>
-
-    <% @entries.select{ |e| e.date.to_date == x}.each do |s| %>
+    <% @entries.select{ |e| e.date.to_date == date}.each do |s| %>
       <%= link_to s.title, entry_path(s.id) %>
+      <br>
     <% end %>
   <% end %>
 </div>

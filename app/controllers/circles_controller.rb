@@ -1,10 +1,16 @@
 class CirclesController < ApplicationController
-  after_action :verify_policy_scoped, except: [ :index, :create ]
+  after_action :verify_policy_scoped, except: [ :index, :show, :create ]
 
   def index
     @circles = Circle.all
     authorize @circles
     @circle = Circle.new
+  end
+
+  def show
+    circle = Circle.find(params[:id])
+    authorize circle
+    @entries = circle.entries
   end
 
   def create
