@@ -7,7 +7,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= simple_form_for(@entry, html: { autocomplete: 'off', wrap: 'hard'}) do |f| %>
+        <%= simple_form_for(entry, html: { autocomplete: 'off', wrap: 'hard'}) do |f| %>
           <%= f.error_notification %>
           <div class="modal-input-field">
             <%= f.input :title,
@@ -25,6 +25,13 @@
                         label: "Datum",
                         label_html: { :class => 'white-form' },
                         required: false %>
+            <%= f.association :circle,
+                        label: "Kreis",
+                        label_html: { :class => 'white-form'},
+                        as: :select,
+                        collection: circles,
+                        include_hidden: false,
+                        include_blank: false  %>
             <div class="bottom-border">
               <%= f.input :time,
                           as: :time,

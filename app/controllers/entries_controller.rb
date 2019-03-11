@@ -13,6 +13,7 @@ class EntriesController < ApplicationController
     else
       @entries = scoped_entry
     end
+    @circles = Circle.all
     @entry = Entry.new
   end
 
@@ -24,6 +25,7 @@ class EntriesController < ApplicationController
     @comment = Comment.new
     @attachment = Attachment.new
     @attachments = entry_attachments.reverse
+    @circles = Circle.all
   end
 
   def create
@@ -111,7 +113,7 @@ class EntriesController < ApplicationController
   end
 
   def entry_params
-    params.require(:entry).permit(:title, :description, :time, :date, :location)
+    params.require(:entry).permit(:title, :description, :time, :date, :location, :circle_id)
   end
 
   def entry_attachments
