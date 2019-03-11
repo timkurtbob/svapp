@@ -4,12 +4,12 @@
 
 <div class="container">
   <div class="author-infos big">
-    <%= link_to "/users/#{@author.id}" do  %>
-      <!-- <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'profile.png' %>);">
-      </div> -->
-      <h3 class="red-font bold-font"><%= @author.first_name %> <%= @author.second_name %>
+    <!-- <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'profile.png' %>);">
+    </div> -->
+    <div>
+      <h3 class="red-font bold-font"><%= @author.first_name %> <%= @author.second_name %> |
       <h3><%= @entry.created_at.strftime("%d.%m.%Y") %> um <%= @entry.created_at.strftime('%H:%M') %></h3>
-    <% end %>
+    </div>
   </div>
 
   <div class="entry-body">
@@ -21,9 +21,7 @@
       </h3>
     <% end %>
     <% if @entry.circle %>
-      <%= link_to "/circles/#{@entry.circle.id}" do  %>
-        <h3 class="small-top-bottom-margin semi-bold-font italic-font"><%= @entry.circle.name %></h3>
-      <% end %>
+      <h3 class="small-top-bottom-margin semi-bold-font italic-font"><%= @entry.circle.name %></h3>
     <% end %>
     <br>
     <h2 class="semi-bold-font small-top-bottom-margin"><%= @entry.title %></h2>

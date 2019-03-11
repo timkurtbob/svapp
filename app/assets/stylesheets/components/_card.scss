@@ -10,10 +10,6 @@
   text-decoration: none;
 }
 
-.entry-card:hover {
-  background-color: rgba(166, 36, 65, 0.03);
-}
-
 .author-text {
   h4 {
     margin: 0
@@ -35,26 +31,18 @@
 }
 
 .entry-card-link {
-  margin: 10px 10px 0 5px;
+  margin: 10px;
 }
 
 .entry-card-link:hover {
   opacity: 0.8;
 }
 
-.card-foot {
-  position: relative;
-}
-
-.card-foot-left {
-  min-height: 25px;
-  min-width: 10px;
-}
-
 .card-foot-right {
   position: absolute;
   bottom: 0;
   right: 0;
+  margin: 5px;
   color: $brand-red;
   h4 {
     margin-left: 5px;
