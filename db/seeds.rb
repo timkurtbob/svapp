@@ -27,8 +27,8 @@ school = School.create(name: 'mehralslernen')
 puts 'creating users...'
 
 user_one = User.create(
-  first_name: 'Info',
-  second_name: ':',
+  first_name: 'App',
+  second_name: 'Infos',
   role: 0,
   email: 'nutzer@null.org',
   phone: '+030 25095844',
