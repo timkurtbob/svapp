@@ -2,8 +2,8 @@
     <h4 class="bold-font">Kommentare:</h4>
     <div class="new-comment-area">
       <div class="author-infos small">
-        <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'profile.png' %>);">
-        </div>
+        <!-- <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'profile.png' %>);">
+        </div> -->
       </div>
       <%= simple_form_for(comment, url: add_comment_path, html: { autocomplete: 'off', wrap: 'hard'}, remote: true) do |f| %>
         <%= f.error_notification %>
