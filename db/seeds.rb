@@ -30,7 +30,7 @@ user_one = User.create(
   first_name: 'App',
   second_name: 'Infos',
   role: 0,
-  email: 'nutzer@null.org',
+  email: 'app@info.org',
   phone: '+030 25095844',
   school_id: school.id,
   password: '******'

@@ -95,11 +95,10 @@ class EntriesController < ApplicationController
     else
       render 'new'
     end
+  end
 
-    def dates
-      @entries = Entry.all
-      authorize @entries
-    end
+  def dates
+    @entries = Entry.all
   end
 
   private
