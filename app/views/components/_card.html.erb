@@ -18,15 +18,22 @@
         <p><%= entry.description %></p>
       </div>
 
-      <div class="entry-card-foot">
-        <div>
-
-        <% if entry.time %>
-          <h4 class="red-font semi-bold-font" id="entry-card-date"><%= entry.date.strftime("%d.%m.%Y") %> um <%= entry.time.strftime('%H:%M')%> Uhr</h4>
-        <% end %>
-        <% if entry.location %>
-          <h4 class="red-font semi-bold-font"><%= entry.location %></h4>
-        <% end %>
+      <div class="d-flex justify-content-between">
+        <div class="card-foot-left">
+          <% if entry.location %>
+            <h4 class="red-font semi-bold-font"><%= entry.location %></h4>
+          <% end %>
+          <% if entry.time %>
+            <h4 class="red-font semi-bold-font" id="entry-card-date"><%= entry.date.strftime("%d.%m.%Y") %> um <%= entry.time.strftime('%H:%M')%> Uhr</h4>
+          <% end %>
+        </div>
+        <div class="card-foot-right">
+          <% if entry.circle %>
+            <div class="row">
+              <i class="far fa-circle"></i>
+              <h4> <%= entry.circle.name %></h4>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

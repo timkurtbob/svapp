@@ -37,3 +37,14 @@
 .entry-card-link:hover {
   opacity: 0.8;
 }
+
+.card-foot-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 5px;
+  color: $brand-red;
+  h4 {
+    margin-left: 5px;
+  }
+}
