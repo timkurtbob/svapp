@@ -1,5 +1,5 @@
 <%= render 'components/back_navbar' %>
-<%= render 'components/entry_modal', entry: @entry %>
+<%= render 'components/entry_modal', entry: @entry, circles: @circles %>
 <%= render 'components/deactivation_modal', entry: @entry %>
 
 <div class="container">
@@ -20,8 +20,8 @@
         <% end %>
       </h3>
     <% end %>
-    <% if @entry.location %>
-      <h3 class="small-top-bottom-margin semi-bold-font italic-font"><%= @entry.location %></h3>
+    <% if @entry.circle %>
+      <h3 class="small-top-bottom-margin semi-bold-font italic-font"><%= @entry.circle.name %></h3>
     <% end %>
     <h2 class="semi-bold-font small-top-bottom-margin"><%= @entry.title %></h2>
     <p><%= @entry.description %></p>

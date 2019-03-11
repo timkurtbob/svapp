@@ -17,6 +17,7 @@ Attachment.destroy_all
 Entry.destroy_all
 User.destroy_all
 School.destroy_all
+Circle.destroy_all
 
 
 puts 'creating mehralslernen...'
@@ -35,6 +36,12 @@ user_one = User.create(
   password: '******'
   )
 
+puts 'creating circles'
+
+circle_one = Circle.create(
+  name: 'Allgemeines'
+  )
+
 puts 'creating entries'
 
 entry_one = Entry.create(
@@ -42,32 +49,32 @@ entry_one = Entry.create(
   description: 'Neue Einträge kannst du über das Plus unten rechts hinzufügen',
   date: Date.new(2019, 3, 12),
   location: 'Aula',
-  user: user_one
+  user: user_one,
+  circle: circle_one
   )
 
 entry_two = Entry.create(
   title: 'Lesezeichen',
   description: 'Lesezeichen kannst du auf jedem Eintrag oben rechts hinzufügen',
   date: Date.new(2019, 3, 15),
-  user: user_one
+  user: user_one,
+  circle: circle_one
   )
 
 entry_three = Entry.create(
   title: 'Anhänge',
   description: 'Zu jedem Eintrag kannst du Dokumente und Bilder anhängen',
   date: Date.new(2019, 3, 21),
-  user: user_one
+  user: user_one,
+  circle: circle_one
   )
 
 entry_four = Entry.create(
   title: 'Menü',
   description: 'Das Menü kannst du zur Navigation oben links aufrufen',
   date: Date.new(2019, 3, 21),
-  user: user_one
+  user: user_one,
+  circle: circle_one
   )
 
-puts 'creating circles'
 
-circle_one = Circle.create(
-  name: 'Allgemeines'
-  )
