@@ -1,0 +1,7 @@
+function addAttachment() {
+  const addAttachmentArea = document.querySelector('.attachment-upload-render')
+  const attachmentsList = "<%= j render 'components/attachments', attachments: @attachments %>";
+  addAttachmentArea.insertAdjacentHTML('afterend', attachmentsList);
+}
+
+addAttachment();
