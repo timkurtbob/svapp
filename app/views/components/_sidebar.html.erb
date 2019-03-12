@@ -6,6 +6,9 @@
     <i class="fas fa-bars shadowless"></i>
   </div>
   <div class="sidebar-content">
+
+    <%= current_user.school.name %>
+
     <%= link_to entries_path do %>
       <i class="far fa-paper-plane">
         <span> Start</span>

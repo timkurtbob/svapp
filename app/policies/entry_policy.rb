@@ -11,7 +11,7 @@ class EntryPolicy < ApplicationPolicy
   end
 
   def show?
-    user.present?
+    user.present? && (user.school == record.user.school) || user.super_admin?
   end
 
   def create?
@@ -20,7 +20,6 @@ class EntryPolicy < ApplicationPolicy
 
   def update?
     record.user == user  && (user.mitglied? || user.admin? || user.super_admin?)
-
   end
 
   def bookmark?
