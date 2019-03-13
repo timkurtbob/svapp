@@ -1,5 +1,4 @@
-<!-- file section -->
-<div class="attach-header">
+<div class="attach-doc-header">
   <h2>Dokumente</h2>
   <div class="attach-button">
     <i class="fas fa-plus"></i>
@@ -7,22 +6,9 @@
   </div>
 </div>
 
-<div class="document-links">
-  <% @attachments.sort! %>
-  <% @attachments.reverse! %>
-  <% documents = @attachments.select{ |a| a.file_type == 'document'} %>
-    <% documents.each do |d| %>
-    <%= link_to "#{d.name}", target: :_blank do %>
-      <h3>#<%= d.id %> - <%= d.file_name %></h3>
-    <% end %>
-  <% end %>
-  <div class="stop-attach-float">
-  </div>
-</div>
+<%= render 'components/attachment_doc_list', attachments: @attachments %>
 
-
-<!-- image section -->
-<div class="attach-header">
+<div class="attach-image-header">
   <h2>Bilder</h2>
   <div class="attach-button">
     <i class="fas fa-plus"></i>
@@ -30,19 +16,7 @@
   </div>
 </div>
 
+<%= render 'components/attachment_image_list', attachments: @attachments %>
 
-<% images = @attachments.select{ |a| a.file_type == 'image'} %>
-  <% images.each do |i| %>
-  <div class="image-links">
-    <%= link_to "#{i.name}", target: :_blank do %>
-      <p>#<%= i.id %></p>
-      <%= cl_image_tag(i.name, width: 160, height: 160, crop: "fill") %>
-      <br>
-      <p> <%= i.file_name %></p>
-    <% end %>
-  </div>
-<% end %>
-<div class="stop-attach-float">
-</div>
 
 <%= javascript_pack_tag 'attachmentUpload' %>

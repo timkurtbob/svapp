@@ -39,7 +39,6 @@
       <p class="small-top-bottom-margin"><span class="bold-font">Wo: </span><%= @entry.location %></p>
     <% end %>
   </div>
-
   <%= render 'components/attachment_upload_form', entry: @entry, attachment: @attachment %>
   <%= render 'components/attachments', attachments: @attachments %>
   <%= render 'components/comments', comment: @comment %>

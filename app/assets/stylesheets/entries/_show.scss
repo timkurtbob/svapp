@@ -81,7 +81,7 @@
   text-align: right;
 }
 
-.document-links {
+.document-list {
   h3 {
     color: $brand-red;
     font-weight: bold;
@@ -102,7 +102,8 @@
   clear: both;
 }
 
-.attach-header {
+.attach-doc-header,
+.attach-image-header {
   display: flex;
   justify-content: space-between;
   margin-top: 32px;
