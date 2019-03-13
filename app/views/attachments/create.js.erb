@@ -1,10 +1,24 @@
-const attachments = document.querySelector('.attachments');
-const addAttachmentArea = document.querySelector('.attachment-upload-render');
-const attachmentsPartial = "<%= j render 'components/attachments', attachments: @attachments %>";
+// divs to remove
+var docList = document.querySelector('.document-list');
+var imageList = document.querySelector('.image-list');
+
+// header divs after which partial needs to be rendered
+var docHeader = document.querySelector('.attach-doc-header');
+var imageHeader = document.querySelector('.attach-image-header');
+
+// partials to be rendered
+var docsPartial = "<%= j render 'components/attachment_doc_list', attachments: @attachments %>";
+var imagesPartial = "<%= j render 'components/attachment_image_list', attachments: @attachments %>";
 
 function addAttachment() {
-  attachments.remove();
-  addAttachmentArea.insertAdjacentHTML('afterend', attachmentsPartial);
+
+  // removing divs
+  docList.remove();
+  imageList.remove();
+
+  //inserting renders
+  docHeader.insertAdjacentHTML('afterend', docsPartial);
+  imageHeader.insertAdjacentHTML('afterend', imagesPartial);
 }
 
 addAttachment();
