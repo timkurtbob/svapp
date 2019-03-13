@@ -1,7 +1,10 @@
+const attachments = document.querySelector('.attachments');
+const addAttachmentArea = document.querySelector('.attachment-upload-render');
+const attachmentsPartial = "<%= j render 'components/attachments', attachments: @attachments %>";
+
 function addAttachment() {
-  const addAttachmentArea = document.querySelector('.attachment-upload-render')
-  const attachmentsList = "<%= j render 'components/attachments', attachments: @attachments %>";
-  addAttachmentArea.insertAdjacentHTML('afterend', attachmentsList);
+  attachments.remove();
+  addAttachmentArea.insertAdjacentHTML('afterend', attachmentsPartial);
 }
 
 addAttachment();

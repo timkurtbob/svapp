@@ -9,9 +9,9 @@ class AttachmentsController < ApplicationController
     @attachment.user = @user
     @attachment.entry = @entry
     @attachment.file_name = Time.now.to_s[0..-6]
-    @attachments = attachments_from_same_entry
 
     if @attachment.save
+      @attachments = attachments_from_same_entry
       respond_to do |format|
         format.html { redirect_to @entry }
         format.js
