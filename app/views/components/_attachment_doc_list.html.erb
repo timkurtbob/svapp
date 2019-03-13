@@ -4,7 +4,8 @@
   <% documents = @attachments.select{ |a| a.file_type == 'document'} %>
     <% documents.each do |d| %>
     <%= link_to "#{d.name}", target: :_blank do %>
-      <h3>#<%= d.id %> - <%= d.file_name %></h3>
+      <% fn = "#{d.name.to_s[60..110]}..."  %>
+      <h3><%= fn %></h3>
     <% end %>
   <% end %>
   <div class="stop-attach-float">

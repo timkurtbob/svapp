@@ -8,7 +8,7 @@ class AttachmentsController < ApplicationController
     @user = current_user
     @attachment.user = @user
     @attachment.entry = @entry
-    @attachment.file_name = Time.now.to_s[0..-6]
+    @attachment.file_name = Time.now.to_s[0..-7]
 
     if @attachment.save
       @attachments = attachments_from_same_entry
