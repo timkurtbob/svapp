@@ -4,7 +4,7 @@
   <% documents = @attachments.select{ |a| a.file_type == 'document'} %>
     <% documents.each do |d| %>
     <%= link_to "#{d.name}", target: :_blank do %>
-      <% fn = "#{d.name.to_s[60..110]}..."  %>
+      <% fn = "#{d.name.to_s.split('/')[-1].split('_--_20')[0]}"  %>
       <h3><%= fn %></h3>
     <% end %>
   <% end %>
