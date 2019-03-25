@@ -13,12 +13,17 @@
   <% if @school_documents.length == 0 %>
     <h2 style="text-align: center;">Für deine Schule sind keine Dokumente hinterlegt</h2>
   <% else %>
-    <% @school_documents.each do |sd| %>
-      <%= link_to "#{sd.name}", target: :blank do %>
-        <% fn = "#{sd.name.to_s.split('/')[-1].split('_--_20')[0]}" %>
-        <h3><%= fn %></h3>
+    <div class="school-doc-link-list">
+      <% @school_documents.each do |sd| %>
+        <%= link_to "#{sd.name}", target: :blank do %>
+          <div class="row school-doc-link">
+            <% fn = "#{sd.name.to_s.split('/')[-1].split('_--_20')[0]}" %>
+            <i class="fas fa-file-alt fa-2x"></i>
+            <h2><%= fn %></h2>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   <% end %>
 </div>
 
