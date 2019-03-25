@@ -1,7 +1,28 @@
-<h1>Documents#index</h1>
-<p>Find me in app/views/documents/index.html.erb</p>
+<%= render 'components/navbar_burger_only' %>
 
-<div class="document-form">
+<div class="container">
+  <div class="attach-doc-header">
+    <h2>Wichtige Dokumente</h2>
+    <% if current_user.admin? || current_user.super_admin? %>
+      <div class="attach-button">
+        <i class="fas fa-plus"></i>
+        <i class="fas fa-file-alt fa-2x" id="add-document-btn"></i>
+      </div>
+    <% end %>
+  </div>
+  <% if @school_documents.length == 0 %>
+    <h2 style="text-align: center;">Für deine Schule sind keine Dokumente hinterlegt</h2>
+  <% else %>
+    <% @school_documents.each do |sd| %>
+      <%= link_to "#{sd.name}", target: :blank do %>
+        <% fn = "#{sd.name.to_s.split('/')[-1].split('_--_20')[0]}" %>
+        <h3><%= fn %></h3>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<div hidden class="document-form">
   <%= simple_form_for(@document, method: :post, remote: true, html: { autocomplete: 'off', wrap: 'hard'}) do |f| %>
     <%= f.error_notification %>
     <%= f.input :school,
@@ -11,3 +32,5 @@
     <%= f.submit "Submit", class: "submit-btn" %>
   <% end %>
 </div>
+
+<%= javascript_pack_tag 'schoolDocUpload' %>
