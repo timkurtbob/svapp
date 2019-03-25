@@ -1,5 +1,4 @@
 <div hidden class="attachment-form">
-  <%= time_stamp = Time.now.to_s %>
   <%= simple_form_for( ([entry, attachment]), method: :post, remote: true, html: { autocomplete: 'off', wrap: 'hard'}) do |f| %>
     <%= f.error_notification %>
     <%= f.input :user,

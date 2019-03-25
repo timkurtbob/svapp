@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   ActiveAdmin.routes(self)
   devise_for :users
 
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
 
   resources :circles, only: [:index, :show, :create, :update]
   resources :users, only: [:index, :show, :update]
+  resources :documents, only: [:index, :create]
 
   get 'comments/:id/bee', to: 'entries#bee', as: 'bee'
   post '/entries/:id/comments', to: 'entries#add_comment', as: 'add_comment'
@@ -25,4 +27,5 @@ Rails.application.routes.draw do
 
   get 'bookmarks', to: 'entries#my_bookmarks', as: 'my_bookmarks'
   get 'dates', to: 'entries#dates', as: 'dates'
+
 end

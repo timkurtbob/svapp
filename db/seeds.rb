@@ -16,6 +16,7 @@ Bookmark.destroy_all
 Attachment.destroy_all
 Entry.destroy_all
 User.destroy_all
+Document.destroy_all
 School.destroy_all
 Circle.destroy_all
 
