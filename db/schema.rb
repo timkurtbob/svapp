@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_09_141531) do
+ActiveRecord::Schema.define(version: 2019_03_25_152521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,14 @@ ActiveRecord::Schema.define(version: 2019_03_09_141531) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "documents", force: :cascade do |t|
+    t.string "name"
+    t.bigint "school_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["school_id"], name: "index_documents_on_school_id"
+  end
+
   create_table "entries", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -123,6 +131,7 @@ ActiveRecord::Schema.define(version: 2019_03_09_141531) do
   add_foreign_key "bookmarks", "users"
   add_foreign_key "comments", "entries"
   add_foreign_key "comments", "users"
+  add_foreign_key "documents", "schools"
   add_foreign_key "entries", "circles"
   add_foreign_key "entries", "users"
   add_foreign_key "users", "schools"

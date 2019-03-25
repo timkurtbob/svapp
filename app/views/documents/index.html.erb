@@ -1,0 +1,13 @@
+<h1>Documents#index</h1>
+<p>Find me in app/views/documents/index.html.erb</p>
+
+<div class="attachment-form">
+  <%= simple_form_for(@document, method: :post, remote: true, html: { autocomplete: 'off', wrap: 'hard'}) do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :school,
+                input_html: {value: "#{@school.id}"} %>
+    <%= f.input :name %>
+    <%= f.input :name_cache %>
+    <%= f.submit "Submit", class: "submit-btn" %>
+  <% end %>
+</div>
