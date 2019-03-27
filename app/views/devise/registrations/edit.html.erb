@@ -14,6 +14,10 @@
                     label_html: { :class => 'red-form' },
                     required: true,
                     autofocus: true %>
+        <%= f.input :pic,
+                    label: "Profilbild",
+                    label_html: { :class => 'red-form' } %>
+        <%= f.input :pic_cache, as: :hidden %>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
