@@ -8,16 +8,26 @@
         <%= f.input :phone,
                     required: true,
                     label: "Telefonnummer",
-                    label_html: { :class => 'red-form' },
+                    label_html: { class: 'red-form' },
                     autofocus: true %>
         <%= f.input :email,
-                    label_html: { :class => 'red-form' },
+                    label_html: { class: 'red-form' },
                     required: true,
                     autofocus: true %>
         <%= f.input :pic,
                     label: "Profilbild",
-                    label_html: { :class => 'red-form' } %>
-        <%= f.input :pic_cache, as: :hidden %>
+                    label_html: { class: 'red-form', id: 'label-pic'},
+                    input_html: { hidden: true } %>
+        <%= f.input :pic_cache,
+                    as: :hidden %>
+
+        <div class="container" id="profile-pic-upload-div">
+          <div class="row">
+            <i class="fas fa-plus"></i>
+            <i class="far fa-user-circle fa-2x" id="profile-pic-upload-btn"></i>
+          </div>
+        </div>
+
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -25,26 +35,26 @@
 
         <%= f.input :password,
                     label: "Neues Passwort",
-                    label_html: { :class => 'red-form' },
+                    label_html: { class: 'red-form' },
                     hint: "Frei lassen falls es nicht geändert werden soll.",
                     required: false,
                     input_html: { autocomplete: "new-password" } %>
         <%= f.input :password_confirmation,
                     label: "Neues Passwort bestätigen",
-                    label_html: { :class => 'red-form' },
+                    label_html: { class: 'red-form' },
                     hint: "Frei lassen falls es nicht geändert werden soll.",
                     required: false,
                     input_html: { autocomplete: "new-password" } %>
         <%= f.input :current_password,
                     label: "Aktuelles Passwort",
-                    label_html: { :class => 'red-form' },
+                    label_html: { class: 'red-form' },
                     hint: "Das aktuelle Passwort muss zur Bestätigung eingegeben werden.",
                     required: true,
                     input_html: { autocomplete: "current-password" } %>
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Speichern", :class => "btn-start-first-choice" %>
+        <%= f.button :submit, "Speichern", class: "btn-start-first-choice" %>
       </div>
     <% end %>
 
@@ -53,3 +63,5 @@
     <p class="margin-top-30"><%= link_to "Meinen Account löschen", registration_path(resource_name), class: "btn-second-choice", data: { confirm: "Bist du sicher das du deinen Account löschen möchtest?" }, method: :delete %></p>
   </div>
 </div>
+
+<%= javascript_pack_tag 'profilePicUpload' %>
