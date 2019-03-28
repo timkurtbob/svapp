@@ -2,7 +2,7 @@
 <div class="contatiner">
   <div class="profile-box">
     <% if @user.pic %>
-      <%= cl_image_tag(@user.pic, width: 160, height: 160, crop: "fill", radius: "max") %>
+      <i class="far fa-user-circle fa-7x"></i>
     <% else %>
       <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'profile.png' %>);"></div>
     <% end %>
