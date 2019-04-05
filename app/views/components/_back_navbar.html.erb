@@ -10,9 +10,13 @@
           <div data-toggle="modal" data-target="#entryModal">
             <li><a href="#">Bearbeiten</a></li>
           </div>
-          <!-- <div data-toggle="modal" data-target="#deactivationModal">
-            <li><a href="#">Deaktivieren</a></li>
-          </div> -->
+          <div data-toggle="modal" data-target="#deactivationModal">
+            <% if @entry.deactivated == false %>
+              <li><a href="#">Archivieren</a></li>
+            <% else %>
+              <li><a href="#">Reaktivieren</a></li>
+            <% end %>
+          </div>
         </ul>
       </div>
     </div>

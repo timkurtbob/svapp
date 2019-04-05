@@ -1,11 +1,10 @@
 class EntriesController < ApplicationController
-  after_action :verify_authorized, except: [:my_bookmarks, :index, :dates]
-
+  after_action :verify_authorized, except: %i[my_bookmarks index dates]
 
   def index
     case params[:query]
     when "Neuigkeiten"
-     @entries = scoped_entry.order(created_at: :DESC)
+      @entries = scoped_entry.order(created_at: :DESC)
     when "Nächste"
       @entries = scoped_entry.where("date >= ?", DateTime.now)
     when "Letzte"
@@ -87,8 +86,7 @@ class EntriesController < ApplicationController
     @comment.user = current_user
     # authorize @comment
     if @comment.save
-      respond_to do |format|    authorize @entry
-
+      respond_to do |format| authorize @entry
         format.html { redirect_to entry_path(@entry) }
         format.js # <-- will render `app/views/entries/add_comment.js.erb`
       end
