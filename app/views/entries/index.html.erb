@@ -1,6 +1,6 @@
 <%= render 'components/entries_navbar' %>
 <div class="container">
-  <% actives = @entries.select { |e| e.deactivated == true } %>
+  <% actives = @entries.select { |e| e.deactivated == false } %>
   <% actives.each do |entry| %>
     <% if current_user.super_admin? %>
       <%= render 'components/card', entry: entry %>
