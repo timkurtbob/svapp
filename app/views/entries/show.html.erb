@@ -1,6 +1,6 @@
-<%= render 'components/back_navbar' %>
+<%= render 'components/back_navbar', entry: @entry %>
 <%= render 'components/entry_modal', entry: @entry, circles: @circles %>
-<%= render 'components/deactivation_modal', entry: @entry %>
+<%= render 'components/archive_modal', entry: @entry %>
 
 <div class="container">
   <div class="author-infos big">

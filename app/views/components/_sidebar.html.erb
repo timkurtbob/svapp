@@ -44,6 +44,14 @@
       </i>
     <% end %>
 
+    <% if current_user.admin? || current_user.super_admin? %>
+      <%= link_to entries_archives_path do %>
+        <i class="fas fa-archive">
+          <span> Archiv</span>
+        </i>
+      <% end %>
+    <% end %>
+
     <%= link_to users_path do %>
       <i class="fas fa-users">
         <span> SV</span>

@@ -1,0 +1,36 @@
+<div class="modal fade" id="deactivationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <% if current_user.admin? || current_user.super_admin? || @entry.user == current_user %>
+        <div class="modal-body">
+          <% if entry.deactivated == false %>
+            <h4>Bist du sicher, dass du diesen Eintrag archivieren möchtest?</h4>
+            <h4>Ein deaktivierter Eintrag erscheint nicht mehr auf der Timeline und kann nur noch von einem Administrator eingesehen werden.</h4>
+          <% else %>
+            <h4>Bist du sicher, dass du diesen Eintrag aus dem Archiv holen möchtest?</h4>
+            <h4>Dieser Eintrag erscheint dann wieder regulär in der Timeline für alle.</h4>
+          <% end %>
+          <div class="form-actions">
+            <button class="btn btn-first-choice" data-dismiss="modal" aria-label="Close">
+              Abbrechen
+            </button>
+              <% if entry.deactivated == false %>
+                <%= link_to 'Archivieren', entries_archive_path(entry), method: :patch, class: 'btn btn-second-choice'  %>
+              <% else %>
+                <%= link_to 'Reaktivieren', entries_archive_path(entry), method: :patch, class: 'btn btn-second-choice'  %>
+              <% end %>
+          </div>
+        </div>
+      <% else %>
+        <div class="modal-body pb-2 text-center">
+          <h4>You Cannot Perform This action.</h4>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
