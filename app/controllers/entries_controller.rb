@@ -20,7 +20,7 @@ class EntriesController < ApplicationController
     @entry = Entry.find(params[:id])
     authorize @entry
     @author = @entry.user
-    @comments = @entry.comments.reverse
+    @comments = active_comments
     @comment = Comment.new
     @attachment = Attachment.new
     @attachments = entry_attachments.reverse
@@ -96,5 +96,11 @@ class EntriesController < ApplicationController
     entry = Entry.find(params[:id])
     attachments_array = entry.attachments
     return attachments_array
+  end
+
+  def active_comments
+    comments = Comment.all
+    active_comments = comments.select { |c| c.deactivated == false }
+    active_comments
   end
 end

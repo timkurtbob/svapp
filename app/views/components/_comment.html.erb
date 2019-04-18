@@ -1,11 +1,23 @@
+<%= render 'components/archive_comment_modal', comment: comment %>
 <div class="comment">
-  <div class="author-infos small">
-    <!-- <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'profile.png' %>);">
-    </div> -->
-    <div>
-      <h5 class="red-font bold-font"><%= comment.user.first_name %> <%= comment.user.second_name %>
-      <h5><%= comment.created_at.strftime("%d.%m.%Y") %> um <%= comment.created_at.strftime('%H:%M') %></h5>
+  <div class="row comment-head">
+    <div class="author-infos small">
+      <!-- <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'profile.png' %>);">
+      </div> -->
+      <div>
+        <h5 class="red-font bold-font"><%= comment.user.first_name %> <%= comment.user.second_name %>
+        <h5><%= comment.created_at.strftime("%d.%m.%Y") %> um <%= comment.created_at.strftime('%H:%M') %></h5>
+      </div>
     </div>
+    <% if comment.user == current_user || current_user.admin? || current_user.super_admin? %>
+      <div data-toggle="modal" data-target='<%="archive-comment#{comment.id.to_s}-modal"%>'>
+        <a href="#">
+          <div class="archive-icon">
+            <i class="fas fa-times"></i>
+          </div>
+        </a>
+      </div>
+    <% end %>
   </div>
   <div class="comment-content">
     <p class="comment-text"><%= comment.text %></p>
@@ -14,3 +26,5 @@
     </div>
   </div>
 </div>
+
+

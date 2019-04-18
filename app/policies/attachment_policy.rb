@@ -6,7 +6,6 @@ class AttachmentPolicy < ApplicationPolicy
       else
         scope.where(id: user.id)
       end
-
     end
   end
 

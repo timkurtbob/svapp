@@ -45,6 +45,12 @@
   }
 }
 
+.archive-icon {
+  color: $brand-red;
+  margin-right: 24px;
+  margin-bottom: 8px;
+}
+
 .new-comment-area {
   display: flex;
   align-items: flex-start;
@@ -52,6 +58,10 @@
 
 #new_comment {
   width: 100%;
+}
+
+.comment-head {
+  justify-content: space-between;
 }
 
 .comment_text {
@@ -109,3 +119,4 @@
   margin-top: 32px;
   margin-bottom: 8px;
 }
+

@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  namespace :comments do
+    get 'archives/index'
+  end
   get 'comments/create'
   ActiveAdmin.routes(self)
   devise_for :users
@@ -10,7 +13,11 @@ Rails.application.routes.draw do
     resources :archives, only: [:index, :update]
   end
 
-  resources :entries, only: [ :index, :show, :create, :update] do
+  namespace :comments do
+    resources :archives, only: [:index, :update]
+  end
+
+  resources :entries, only: [:index, :show, :create, :update] do
     resources :attachments, only: [:create]
   end
 

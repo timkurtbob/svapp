@@ -5,7 +5,6 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.entry = @entry
     @comment.user = current_user
-    # authorize @comment
     if @comment.save
       respond_to do |format| authorize @entry
         format.html { redirect_to entry_path(@entry) }
