@@ -78,23 +78,6 @@ class EntriesController < ApplicationController
     end
   end
 
-  def add_comment
-    @entry = Entry.find(params[:id])
-    authorize @entry
-    @comment = Comment.new(comment_params)
-    @comment.entry = @entry
-    @comment.user = current_user
-    # authorize @comment
-    if @comment.save
-      respond_to do |format| authorize @entry
-        format.html { redirect_to entry_path(@entry) }
-        format.js # <-- will render `app/views/entries/add_comment.js.erb`
-      end
-    else
-      render 'new'
-    end
-  end
-
   def dates
     @entries = Entry.all
   end
@@ -103,10 +86,6 @@ class EntriesController < ApplicationController
 
   def scoped_entry
     policy_scope(Entry)
-  end
-
-  def comment_params
-    params.require(:comment).permit(:text)
   end
 
   def entry_params

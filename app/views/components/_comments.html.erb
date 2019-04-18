@@ -5,7 +5,7 @@
         <!-- <div class="avatar avatar-medium" id="author-pic" style="background-image: url(<%= asset_path 'profile.png' %>);">
         </div> -->
       </div>
-      <%= simple_form_for(comment, url: add_comment_path, html: { autocomplete: 'off', wrap: 'hard'}, remote: true) do |f| %>
+      <%= simple_form_for(comment, url: create_comment_path, html: { autocomplete: 'off', wrap: 'hard'}, remote: true) do |f| %>
         <%= f.error_notification %>
 
         <div id="comment-input">

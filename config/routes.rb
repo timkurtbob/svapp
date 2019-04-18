@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'comments/create'
   ActiveAdmin.routes(self)
   devise_for :users
 
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
   resources :documents, only: [:index, :create]
 
   get 'comments/:id/bee', to: 'entries#bee', as: 'bee'
-  post '/entries/:id/comments', to: 'entries#add_comment', as: 'add_comment'
+  post '/entries/:id/comments', to: 'comments#create', as: 'create_comment'
   get 'entries/:id/bookmark', to: 'entries#bookmark', as: 'bookmark'
 
   get 'bookmarks', to: 'entries#my_bookmarks', as: 'my_bookmarks'
